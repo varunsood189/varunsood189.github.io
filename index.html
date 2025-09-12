@@ -1,27 +1,183 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Varun's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Varun Sood — Resume & Portfolio</title>
+  <meta name="description" content="Portfolio and resume site for Varun Sood" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#6C63FF;--muted:#6b7280;--bg:#0f172a}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#0b1220 0%, #071021 100%);color:#e6eef8;line-height:1.5}
+    .container{max-width:980px;margin:48px auto;padding:24px}
+
+    header{display:flex;gap:16px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#9b8cff);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:#071021}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(4,6,12,0.6);}
+
+    .section-title{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+
+    .about{white-space:pre-line}
+
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:#dbeafe;font-size:13px}
+
+    .experience{display:flex;flex-direction:column;gap:12px}
+    .exp-item{border-left:3px solid rgba(255,255,255,0.03);padding-left:12px}
+    .exp-title{font-weight:600}
+    .muted{color:var(--muted);font-size:14px}
+
+    .projects{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#071021;text-decoration:none;font-weight:600}
+
+    aside .card + .card{margin-top:16px}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:14px}
+
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      .avatar{width:72px;height:72px;font-size:20px}
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <header>
-        <h1>Varun's Portfolio</h1>
+      <div class="avatar">VS</div>
+      <div>
+        <h1>Varun Sood</h1>
+        <p class="lead">Senior Data Scientist</p>
+        <p class="muted">Pune, India • <a href="mailto:varunsood189@gmail.com" style="color:inherit;text-decoration:underline">varunsood189@gmail.com</a> • +91-95692-99360 • <a href="https://github.com/varunsood189" style="color:inherit;text-decoration:underline">GitHub</a> • <a href="https://linkedin.com/in/varunsood189" style="color:inherit;text-decoration:underline">LinkedIn</a></p>
+      </div>
     </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Brief introduction about your skills, experience, and interests.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/username/project1">Project 1</a> - Brief description.</li>
-            <li><a href="https://github.com/username/project2">Project 2</a> - Brief description.</li>
-        </ul>
-    </section>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <div class="section-title">About</div>
+          <div class="about">
+            Senior Data Scientist with expertise in computer vision, machine learning, and optimization. Experienced in developing production-ready AI systems, optimizing infrastructure, and mentoring teams. Passionate about solving real-world problems with scalable ML solutions.
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title">Experience</div>
+          <div class="experience">
+            <div class="exp-item">
+              <div class="exp-title">Senior Data Scientist — Dataeaze Systems</div>
+              <div class="muted">Apr 2022 – Present · Pune, India</div>
+              <div>
+                • Built YOLO + depthmap collision prediction system.<br>
+                • Developed ResumeRAG for document info extraction with RAG.<br>
+                • Delivered PCI grading with ViViT and dashcam inputs.<br>
+                • Fine-tuned Dinov2 for image quality classification (90%+ accuracy).<br>
+                • Designed ARP system with EfficientNetV2 & DeepLabV3, MAE <10%.<br>
+                • Reduced pipeline storage by 80% and training time by 67%.<br>
+                • Mentored juniors, awarded "Mentor of the Machine".
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-title">Senior Software Specialist — Infineon Technology</div>
+              <div class="muted">Jul 2019 – Mar 2022 · Bangalore, India</div>
+              <div>
+                • Developed SystemC models for Aurix products.<br>
+                • Designed PKC & STM modules from scratch in C++.<br>
+                • Built Python test frameworks for multi-core validation.<br>
+                • Maintained legacy QSPI models in C/C++.
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-title">Extreme Blue Intern — IBM GTS Labs</div>
+              <div class="muted">May 2018 – Jul 2018 · Bangalore, India</div>
+              <div>
+                • Developed multi-tier pattern deployment solution for cloud.<br>
+                • Built MVP with vRealize Automation & Orchestrator.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title">Projects</div>
+          <div class="projects">
+            <div class="project">
+              <div style="font-weight:600">ResumeRAG</div>
+              <div class="muted">Retrieval-Augmented Generation system for resume parsing and feedback.</div>
+            </div>
+            <div class="project">
+              <div style="font-weight:600">Collision Prediction</div>
+              <div class="muted">YOLO + Depthmap model for dashcam-based real-time accident warnings.</div>
+            </div>
+            <div class="project">
+              <div style="font-weight:600">Accident Risk Prediction</div>
+              <div class="muted">EfficientNetV2 & DeepLabV3 multi-modal ARP system with high accuracy.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title">Education</div>
+          <div>
+            <div style="font-weight:600">M.Tech in Computer Technology — IIT Delhi</div>
+            <div class="muted">2017 – 2019 • CGPA: 8.48</div>
+            <div style="margin-top:10px;font-weight:600">B.E. in Electronics & Communication — UIET, Panjab University</div>
+            <div class="muted">2012 – 2016 • CGPA: 8.37 (Hons.)</div>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">Skills</div>
+          <div class="skill-list">
+            <div class="skill">Python</div>
+            <div class="skill">C++</div>
+            <div class="skill">SystemC</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Deep Learning</div>
+            <div class="skill">Computer Vision</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">TensorFlow</div>
+            <div class="skill">Keras</div>
+            <div class="skill">SQL</div>
+            <div class="skill">AWS</div>
+            <div class="skill">Azure ML</div>
+            <div class="skill">WandB</div>
+            <div class="skill">GitHub/Bitbucket</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Contact</div>
+          <div class="muted">Email</div>
+          <div style="margin-top:8px"><a class="btn" href="mailto:varunsood189@gmail.com">Email Me</a></div>
+          <div style="margin-top:10px"><a href="/Resume_varun_sood.pdf" class="muted" style="text-decoration:underline">Download resume (PDF)</a></div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Links</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="https://github.com/varunsood189" style="color:inherit;text-decoration:underline">GitHub</a>
+            <a href="https://linkedin.com/in/varunsood189" style="color:inherit;text-decoration:underline">LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
     <footer>
-        <p>Contact: email@example.com | <a href="https://linkedin.com/in/username">LinkedIn</a></p>
+      Built with ❤️ — hosted on GitHub Pages
     </footer>
+  </div>
 </body>
 </html>
-
