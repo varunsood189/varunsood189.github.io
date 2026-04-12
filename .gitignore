@@ -1,0 +1,12 @@
+# Local assets and todo
+todo_list.txt
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Misc
+.env
+.DS_Store
+*.swp
+

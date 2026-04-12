@@ -34,7 +34,12 @@
             <div class="reveal">
                 <h1 style="font-size: clamp(40px, 8vw, 84px); line-height: 1.1; margin-bottom: 24px; font-weight: 800; letter-spacing: -2px;">
                     Crafting the Future: <br>
-                    <span class="gradient-text">GenAI & Python Engineer</span>
+                    <span id="tagline-container" class="gradient-text">
+                        <span class="tagline active">GenAI Architect</span>
+                        <span class="tagline">Python Lead</span>
+                        <span class="tagline">Tech Mentor</span>
+                        <span class="tagline">AI Researcher</span>
+                    </span>
                 </h1>
                 <p class="text-muted" style="font-size: 20px; max-width: 700px; margin: 0 auto 40px;">
                     Building intelligent solutions with data, code, and innovation. Specialized in production-scale LLM systems and advanced computer vision.
@@ -57,9 +62,13 @@
                     <p class="text-muted">
                         Python engineer focused on production GenAI and computer-vision systems. Experienced building schema-aware generation backends, AI agents, and scalable model infra (CI/CD, experiment tracking, storage and training optimization). Strong background in system-level modeling, model optimization, and mentoring engineering teams.
                     </p>
-                    <div style="margin-top: 24px; display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span class="text-small" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-primary); padding: 4px 12px; border-radius: 99px;">AVP @ Citi</span>
-                        <span class="text-small" style="background: rgba(59, 130, 246, 0.1); color: var(--accent-secondary); padding: 4px 12px; border-radius: 99px;">M.Tech @ IIT Delhi</span>
+                    <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+                        <div class="tech-pill" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2); color: var(--accent-primary);">
+                            <i data-lucide="briefcase" style="width: 14px;"></i> AVP @ Citi
+                        </div>
+                        <div class="tech-pill" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: var(--accent-secondary);">
+                            <i data-lucide="graduation-cap" style="width: 14px;"></i> M.Tech @ IIT Delhi
+                        </div>
                     </div>
                 </div>
 
@@ -79,14 +88,15 @@
 
                 <!-- Technical Stack Card -->
                 <div class="glass-card col-8 reveal">
-                    <h3 style="margin-bottom: 16px; font-size: 20px;">Technical Stack</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px;">
-                        <div class="text-small"><i data-lucide="check-circle" style="width: 14px; color: var(--accent-primary);"></i> Python / C++</div>
-                        <div class="text-small"><i data-lucide="check-circle" style="width: 14px; color: var(--accent-primary);"></i> PyTorch / TF</div>
-                        <div class="text-small"><i data-lucide="check-circle" style="width: 14px; color: var(--accent-primary);"></i> CV (YOLO, DINOv2)</div>
-                        <div class="text-small"><i data-lucide="check-circle" style="width: 14px; color: var(--accent-primary);"></i> LLMs / RAG</div>
-                        <div class="text-small"><i data-lucide="check-circle" style="width: 14px; color: var(--accent-primary);"></i> OpenShift / AWS</div>
-                        <div class="text-small"><i data-lucide="check-circle" style="width: 14px; color: var(--accent-primary);"></i> SQL / kdb+</div>
+                    <h3 style="margin-bottom: 24px; font-size: 20px;">Technical Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-pill"><i data-lucide="terminal" style="width: 14px; color: var(--accent-primary);"></i> Python / C++</div>
+                        <div class="tech-pill"><i data-lucide="cpu" style="width: 14px; color: var(--accent-primary);"></i> PyTorch / TF</div>
+                        <div class="tech-pill"><i data-lucide="eye" style="width: 14px; color: var(--accent-primary);"></i> CV (YOLO, DINOv2)</div>
+                        <div class="tech-pill"><i data-lucide="brain-circuit" style="width: 14px; color: var(--accent-primary);"></i> LLMs / RAG</div>
+                        <div class="tech-pill"><i data-lucide="cloud" style="width: 14px; color: var(--accent-primary);"></i> OpenShift / AWS</div>
+                        <div class="tech-pill"><i data-lucide="database" style="width: 14px; color: var(--accent-primary);"></i> SQL / kdb+</div>
+                        <div class="tech-pill"><i data-lucide="activity" style="width: 14px; color: var(--accent-primary);"></i> W&B / Monitor</div>
                     </div>
                 </div>
 
@@ -141,6 +151,70 @@
             </div>
         </section>
 
+        <!-- Technical Deep-Dives (Insights) -->
+        <section id="insights">
+            <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Technical Deep-Dives</h2>
+            <div class="bento-grid">
+                
+                <div class="glass-card col-6 reveal insight-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);">
+                    <div class="insight-tag">Research & Eval</div>
+                    <h3 style="margin-bottom: 12px;"><i data-lucide="microscope" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> LLM Evaluation</h3>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;">
+                        Implementing RAG evaluation frameworks using <b>LLM-as-a-judge</b> and cosine similarity metrics. Specialized in identifying halluncinations and optimizing retrieval precision.
+                    </p>
+                    <div style="display: flex; gap: 8px;">
+                        <span class="text-small" style="color: #10b981;">#RAG</span>
+                        <span class="text-small" style="color: #10b981;">#LLMops</span>
+                    </div>
+                </div>
+
+                <div class="glass-card col-6 reveal insight-card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), transparent);">
+                    <div class="insight-tag">Search & Retrieval</div>
+                    <h3 style="margin-bottom: 12px;"><i data-lucide="search" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> Semantic Search</h3>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;">
+                        Building scalable search architectures with <b>Elasticsearch</b> and <b>SentenceTransformers</b>. Expertise in vector embeddings and hybrid search strategies.
+                    </p>
+                    <div style="display: flex; gap: 8px;">
+                        <span class="text-small" style="color: #f59e0b;">#Elasticsearch</span>
+                        <span class="text-small" style="color: #f59e0b;">#VectorSearch</span>
+                    </div>
+                </div>
+
+                <div class="glass-card col-12 reveal" style="text-align: center; background: rgba(255,255,255,0.02);">
+                    <p class="text-muted text-small">
+                        Exploring <b>Ollama</b> for local inference, <b>Grafana</b> for monitoring, and <b>Saturn Cloud</b> for scalable training.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2 class="reveal" style="margin-bottom: 20px; font-size: 32px;">Certifications</h2>
+            <div class="cert-grid reveal">
+                <div class="cert-card">
+                    <span class="text-small gradient-text">LinkedIn Learning</span>
+                    <h4 style="font-size: 16px;">AI Foundations: Neural Networks</h4>
+                    <p class="text-small text-muted">Focus on backpropagation and deep architecture design.</p>
+                </div>
+                <div class="cert-card">
+                    <span class="text-small gradient-text">LinkedIn Learning</span>
+                    <h4 style="font-size: 16px;">AI Foundations: Machine Learning</h4>
+                    <p class="text-small text-muted">Statistical modeling and supervised/unsupervised learning.</p>
+                </div>
+                <div class="cert-card">
+                    <span class="text-small gradient-text">Coursera</span>
+                    <h4 style="font-size: 16px;">The Data Scientist’s Toolbox</h4>
+                    <p class="text-small text-muted">Environment setup, version control, and data science workflow.</p>
+                </div>
+                <div class="cert-card">
+                    <span class="text-small gradient-text">edX</span>
+                    <h4 style="font-size: 16px;">Embedded Systems</h4>
+                    <p class="text-small text-muted">UT Austin: "Shape the World" – Real-time OS and microcontroller design.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Experience Timeline -->
         <section id="experience">
             <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Experience</h2>
@@ -152,7 +226,6 @@
                             <h3 style="font-size: 20px;">AVP, Python Engineer FX (Gen AI)</h3>
                             <p class="text-small gradient-text">Citi</p>
                         </div>
-                        <p class="text-small text-muted">Aug 2025 – Present</p>
                     </div>
                     <ul class="text-small text-muted" style="padding-left: 20px;">
                         <li>Deployed isolated OpenShift pods with independent pipelines for secure parallel CI/CD.</li>
@@ -164,32 +237,17 @@
                 <div class="glass-card">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
                         <div>
-                            <h3 style="font-size: 20px;">Senior Software Specialist</h3>
-                            <p class="text-small gradient-text">Infineon Technology</p>
+                            <h3 style="font-size: 20px;">Senior Data Scientist</h3>
+                            <p class="text-small gradient-text">Dataeaze Systems</p>
                         </div>
-                        <p class="text-small text-muted">Jul 2019 – Mar 2022</p>
                     </div>
                     <ul class="text-small text-muted" style="padding-left: 20px;">
-                        <li>Developed SystemC models for Aurix products and designed PKC & STM modules in C++.</li>
-                        <li>Built Python test frameworks for multi-core validation.</li>
-                        <li>Maintained legacy QSPI models in C/C++.</li>
+                        <li>Delivered and deployed CV solutions for collision prediction, dashcam PCI grading, and accident risk prediction.</li>
+                        <li>Built ResumeRAG and GenAI solutions including car wheelbase estimation via advanced prompting.</li>
+                        <li>Deployed image-quality classification with DINOv2 + LoRA (90%+ precision using 0.68% trainable params).</li>
+                        <li>Reduced pipeline storage by ~80% and training time by ~67%; integrated experiment tracking and mentored junior engineers.</li>
                     </ul>
                 </div>
-
-                <div class="glass-card">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
-                        <div>
-                            <h3 style="font-size: 20px;">Extreme Blue Intern</h3>
-                            <p class="text-small gradient-text">IBM GTS Labs</p>
-                        </div>
-                        <p class="text-small text-muted">May 2018 – Jul 2018</p>
-                    </div>
-                    <ul class="text-small text-muted" style="padding-left: 20px;">
-                        <li>Developed multi-tier pattern deployment solution for cloud environments.</li>
-                        <li>Built MVP with vRealize Automation & Orchestrator.</li>
-                    </ul>
-                </div>
-
             </div>
         </section>
 
@@ -203,6 +261,17 @@
             <a href="mailto:varunsood189@gmail.com" style="color: var(--text-muted);"><i data-lucide="mail"></i></a>
         </div>
     </footer>
+
+    <!-- Sticky Socials -->
+    <div class="glass-card" style="position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); padding: 12px 24px; display: flex; gap: 24px; z-index: 100; border-radius: 99px;">
+        <a href="https://github.com/varunsood189" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i data-lucide="github" style="width: 20px;"></i></a>
+        <a href="https://linkedin.com/in/varunsood189" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i data-lucide="linkedin" style="width: 20px;"></i></a>
+        <a href="mailto:varunsood189@gmail.com" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i data-lucide="mail" style="width: 20px;"></i></a>
+    </div>
+
+    <div id="back-to-top" title="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -223,6 +292,31 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Tagline Rotation Logic
+        const taglines = document.querySelectorAll('.tagline');
+        let currentTagline = 0;
+
+        function rotateTagline() {
+            taglines[currentTagline].classList.remove('active');
+            currentTagline = (currentTagline + 1) % taglines.length;
+            taglines[currentTagline].classList.add('active');
+        }
+
+        setInterval(rotateTagline, 3000);
+
+        // Back to Top Visibility
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                btt.classList.add('visible');
+            } else {
+                btt.classList.remove('visible');
+            }
+        });
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
         // Mouse move effect for background glow
         document.addEventListener('mousemove', (e) => {
