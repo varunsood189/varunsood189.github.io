@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Varun Sood — Resume & Portfolio</title>
+  <meta name="description" content="Portfolio and resume site for Varun Sood" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#6C63FF;--muted:#6b7280;--bg:#0f172a}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#0b1220 0%, #071021 100%);color:#e6eef8;line-height:1.5}
+    .container{max-width:980px;margin:48px auto;padding:24px}
+
+    header{display:flex;gap:16px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#9b8cff);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:#071021}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(4,6,12,0.6);}
+
+    .section-title{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+
+    .about{white-space:pre-line}
+
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:#dbeafe;font-size:13px}
+
+    .experience{display:flex;flex-direction:column;gap:12px}
+    .exp-item{border-left:3px solid rgba(255,255,255,0.03);padding-left:12px}
+    .exp-title{font-weight:600}
+    .muted{color:var(--muted);font-size:14px}
+
+    .projects{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#071021;text-decoration:none;font-weight:600}
+
+    aside .card + .card{margin-top:16px}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:14px}
+
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      .avatar{width:72px;height:72px;font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">VS</div>
+      <div>
+        <h1>Varun Sood</h1>
+        <p class="lead">AVP, Python Engineer FX (Gen AI)</p>
+        <p class="muted">Pune, India • <a href="mailto:varunsood189@gmail.com" style="color:inherit;text-decoration:underline">varunsood189@gmail.com</a> • +91-95692-99360 • <a href="https://github.com/varunsood189" style="color:inherit;text-decoration:underline">GitHub</a> • <a href="https://linkedin.com/in/varunsood189" style="color:inherit;text-decoration:underline">LinkedIn</a></p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <div class="section-title">About</div>
+          <div class="about">
+            Python engineer focused on production GenAI and computer-vision systems. Experienced building schema-aware generation backends, AI agents, and scalable model infra (CI/CD, experiment tracking, storage and training optimization). Strong background in system-level modeling, model optimization, and mentoring engineering teams.
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title">Experience</div>
+          <div class="experience">
+            <div class="exp-item">
+              <div class="exp-title">AVP, Python Engineer FX (Gen AI) — Citi</div>
+              <div class="muted">Aug 2025 – Present · Pune, India</div>
+              <div>
+                • Deployed isolated OpenShift pods with independent Lightspeed and Harness pipelines for secure parallel CI/CD from separate repositories.<br>
+                • Built and maintained the Schema Manager: a schema-aware English-to-Q generation backbone for safe, executable kdb+ query generation.<br>
+                • Implemented AI agents that interpret natural language, leverage schema context, and autonomously generate, validate, and execute optimized Q code.
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-title">Senior Data Scientist — Dataeaze Systems</div>
+              <div class="muted">Apr 2022 – Aug 2025 · Pune, India</div>
+              <div>
+                • Delivered and deployed CV solutions: collision prediction (YOLO + depth maps), dashcam PCI grading (ViViT), crack & road-width estimation (DepthAnythingV2), and accident risk prediction (MAE &lt; 10% at 0.625m resolution).<br>
+                • Built ResumeRAG (RAG-based document extraction) and GenAI solutions including car wheelbase estimation via advanced prompting.<br>
+                • Deployed image-quality classification with DINOv2 + LoRA (90%+ precision using 0.68% trainable params).<br>
+                • Reduced pipeline storage by ~80% and training time by ~67%; integrated experiment tracking (Weights & Biases), versioning (Bitbucket, S3), and mentored junior engineers.
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-title">Senior Software Specialist — Infineon Technology</div>
+              <div class="muted">Jul 2019 – Mar 2022 · Bangalore, India</div>
+              <div>
+                • Developed SystemC models for Aurix products.<br>
+                • Designed PKC & STM modules from scratch in C++.<br>
+                • Built Python test frameworks for multi-core validation.<br>
+                • Maintained legacy QSPI models in C/C++.
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-title">Extreme Blue Intern — IBM GTS Labs</div>
+              <div class="muted">May 2018 – Jul 2018 · Bangalore, India</div>
+              <div>
+                • Developed multi-tier pattern deployment solution for cloud.<br>
+                • Built MVP with vRealize Automation & Orchestrator.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title">Projects</div>
+          <div class="projects">
+            <div class="project">
+              <div style="font-weight:600">ResumeRAG</div>
+              <div class="muted">Retrieval-Augmented Generation system for resume parsing and feedback.</div>
+            </div>
+            <div class="project">
+              <div style="font-weight:600">Collision Prediction</div>
+              <div class="muted">YOLO + Depthmap model for dashcam-based real-time accident warnings.</div>
+            </div>
+            <div class="project">
+              <div style="font-weight:600">Schema Manager & GenAI Agents</div>
+              <div class="muted">Schema-aware English-to-Q generation backbone and AI agents for autonomous query generation and execution.</div>
+            </div>
+            <div class="project">
+              <div style="font-weight:600">Accident Risk Prediction</div>
+              <div class="muted">EfficientNetV2 & DeepLabV3 multi-modal ARP system with high accuracy.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title">Education</div>
+          <div>
+            <div style="font-weight:600">M.Tech in Computer Technology — IIT Delhi</div>
+            <div class="muted">2017 – 2019 • CGPA: 8.48</div>
+            <div style="margin-top:10px;font-weight:600">B.E. in Electronics & Communication — UIET, Panjab University</div>
+            <div class="muted">2012 – 2016 • CGPA: 8.37 (Hons.)</div>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">Skills</div>
+          <div class="skill-list">
+            <div class="skill">Python</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">TensorFlow</div>
+            <div class="skill">DINOv2 / LoRA</div>
+            <div class="skill">Computer Vision</div>
+            <div class="skill">GenAI / LLMs</div>
+            <div class="skill">Prompting & RAG</div>
+            <div class="skill">SystemC</div>
+            <div class="skill">C / C++</div>
+            <div class="skill">Keras</div>
+            <div class="skill">Weights & Biases</div>
+            <div class="skill">Bitbucket / GitHub</div>
+            <div class="skill">AWS</div>
+            <div class="skill">Azure ML</div>
+            <div class="skill">SQL</div>
+            <div class="skill">IBM ILOG CPLEX</div>
+            <div class="skill">QGIS</div>
+            <div class="skill">Predictive Modeling</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Certifications</div>
+          <div>
+            • Deep Learning by DeepLearning.AI on Coursera
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Contact</div>
+          <div class="muted">Email</div>
+          <div style="margin-top:8px"><a class="btn" href="mailto:varunsood189@gmail.com">Email Me</a></div>
+          <div style="margin-top:10px"><a href="/Resume_varun_sood.pdf" class="muted" style="text-decoration:underline">Download resume (PDF)</a></div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Links</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="https://github.com/varunsood189" style="color:inherit;text-decoration:underline">GitHub</a>
+            <a href="https://linkedin.com/in/varunsood189" style="color:inherit;text-decoration:underline">LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Built with ❤️ — hosted on GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>
