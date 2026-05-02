@@ -15,15 +15,18 @@
 <body>
 
     <!-- Header / Nav -->
-    <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 24px 0;">
+    <nav class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 24px 0; gap: 12px;">
         <div class="brand" style="font-size: 24px; font-weight: 800; letter-spacing: -1px;">
             <span class="gradient-text">VS</span>
         </div>
-        <div style="display: flex; gap: 32px; font-weight: 500; font-size: 14px; align-items: center;">
+        <div class="nav-inner">
             <a href="#about" style="text-decoration: none; color: inherit;" class="nav-link">About</a>
             <a href="#projects" style="text-decoration: none; color: inherit;" class="nav-link">Projects</a>
+            <a href="#insights" style="text-decoration: none; color: inherit;" class="nav-link">Insights</a>
+            <a href="#certifications" style="text-decoration: none; color: inherit;" class="nav-link">Certs</a>
+            <a href="#education" style="text-decoration: none; color: inherit;" class="nav-link">Education</a>
             <a href="#experience" style="text-decoration: none; color: inherit;" class="nav-link">Experience</a>
-            <a href="https://linkedin.com/in/varunsood189" target="_blank" style="text-decoration: none; color: inherit;" class="nav-link"><i data-lucide="linkedin" style="width: 18px; vertical-align: middle;"></i></a>
+            <a href="https://linkedin.com/in/varunsood189" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" class="nav-link" aria-label="LinkedIn"><i data-lucide="linkedin" style="width: 18px; vertical-align: middle;"></i></a>
             <a href="#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 13px;">Contact</a>
         </div>
     </nav>
@@ -42,10 +45,28 @@
                         <span class="tagline">AI Researcher</span>
                     </span>
                 </h1>
-                <p class="text-muted" style="font-size: 20px; max-width: 700px; margin: 0 auto 40px;">
+                <p class="text-muted" style="font-size: 20px; max-width: 700px; margin: 0 auto 32px;">
                     Building intelligent solutions with data, code, and innovation. Specialized in production-scale LLM systems and advanced computer vision.
                 </p>
-                <div style="display: flex; gap: 16px; justify-content: center;">
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">90%+</div>
+                        <div class="hero-stat-label">Image QA precision<br>(DINOv2 + LoRA)</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">~80%</div>
+                        <div class="hero-stat-label">Pipeline storage<br>reduction shipped</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">~67%</div>
+                        <div class="hero-stat-label">Training time<br>cut in production</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">0.68%</div>
+                        <div class="hero-stat-label">Trainable params<br>for strong CV fit</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                     <a href="#projects" class="btn btn-primary">View My Work <i data-lucide="arrow-right" style="width: 18px;"></i></a>
                     <a href="Resume_varun_sood.pdf" class="btn glass-card" style="padding: 12px 28px; background: rgba(255,255,255,0.05);">Download Resume</a>
                 </div>
@@ -113,12 +134,13 @@
                 <div class="glass-card col-8 reveal" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent);">
                     <div style="font-size: 12px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">CHROME EXTENSION | GEN-AI</div>
                     <h3 style="margin-bottom: 12px; font-size: 28px;">ResearchPulse</h3>
-                    <p class="text-muted" style="margin-bottom: 20px;">
+                    <p class="text-muted" style="margin-bottom: 12px;">
                         A Manifest V3 extension that summarizes research articles (arXiv, PMC, MDPI) in real-time. Features follow-up Q&A, privacy-first local key storage, and automated citations using the Google Gemini API.
                     </p>
-                    <div style="display: flex; gap: 16px; align-items: center;">
+                    <p class="text-small text-muted" style="margin-bottom: 20px;"><strong style="color: var(--text-main);">Impact:</strong> Multi-source research workflow in one click—summaries, Q&amp;A, and citations without leaving the paper.</p>
+                    <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
                         <a href="https://github.com/varunsood189/summerize-research-paper" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">View Code</a>
-                        <span class="text-small text-muted"><i data-lucide="layers" style="width: 14px; vertical-align: middle;"></i> Gemini API</span>
+                        <span class="text-small text-muted"><i data-lucide="layers" style="width: 14px; vertical-align: middle;"></i> Gemini API · Manifest V3</span>
                     </div>
                 </div>
 
@@ -126,28 +148,41 @@
                 <div class="glass-card col-4 reveal" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);">
                     <div style="font-size: 12px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">FULLSTACK | PRODUCTIVITY</div>
                     <h3 style="margin-bottom: 12px;">Task-Link Suite</h3>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;">
+                    <p class="text-small text-muted" style="margin-bottom: 8px;">
                         Offline-first task manager with a robust bi-directional sync engine and Chrome extension integration.
                     </p>
-                    <a href="https://github.com/varunsood189/task-link-manager-backend" class="text-small gradient-text" style="text-decoration: none;">Explore Suite →</a>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Shipped:</strong> Backend + extension repos with sync-first UX.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+                        <a href="https://github.com/varunsood189/task-link-manager-backend" class="text-small gradient-text" style="text-decoration: none;">Backend →</a>
+                        <a href="https://github.com/varunsood189/task-link-manager-extension" class="text-small gradient-text" style="text-decoration: none;">Extension →</a>
+                    </div>
                 </div>
 
                 <!-- Project 3: PEFT -->
                 <div class="glass-card col-4 reveal">
+                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">NOTES · LLM OPS</div>
                     <h4 style="margin-bottom: 8px;">peft_techniques</h4>
-                    <p class="text-small text-muted">Deep dive into LoRA/QLoRA for memory-efficient LLM fine-tuning.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 12px;">Deep dive into LoRA/QLoRA for memory-efficient LLM fine-tuning.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Focus:</strong> Low-rank adapters vs full fine-tunes.</p>
+                    <a href="https://github.com/varunsood189/peft_techniques" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
                 </div>
 
                 <!-- Project 4: System Design -->
                 <div class="glass-card col-4 reveal">
+                    <div style="font-size: 11px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">INFRA · CI/CD</div>
                     <h4 style="margin-bottom: 8px;">System_design_example</h4>
-                    <p class="text-small text-muted">Scalable AI infrastructure blueprints and CI/CD pipelines.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 12px;">Scalable AI infrastructure blueprints and CI/CD pipelines.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Scope:</strong> Reference layouts for training and deploy paths.</p>
+                    <a href="https://github.com/varunsood189/System_design_example" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
                 </div>
 
                 <!-- Project 5: CV Improver -->
                 <div class="glass-card col-4 reveal">
-                    <h4 style="margin-bottom: 8px;">CV_Improver_LLM</h4>
-                    <p class="text-small text-muted">AI-powered resume optimization and analysis tool.</p>
+                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">GEN-AI · PRODUCTIVITY</div>
+                    <h4 style="margin-bottom: 8px;">CV_Improver_with_LLMs</h4>
+                    <p class="text-small text-muted" style="margin-bottom: 12px;">AI-powered resume optimization and analysis tool.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Goal:</strong> Structured feedback from LLM passes on CV text.</p>
+                    <a href="https://github.com/varunsood189/CV_Improver_with_LLMs" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
                 </div>
             </div>
         </section>
@@ -161,7 +196,7 @@
                     <div class="insight-tag">Research & Eval</div>
                     <h3 style="margin-bottom: 12px;"><i data-lucide="microscope" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> LLM Evaluation</h3>
                     <p class="text-small text-muted" style="margin-bottom: 16px;">
-                        Implementing RAG evaluation frameworks using <b>LLM-as-a-judge</b> and cosine similarity metrics. Specialized in identifying halluncinations and optimizing retrieval precision.
+                        Implementing RAG evaluation frameworks using <b>LLM-as-a-judge</b> and cosine similarity metrics. Specialized in identifying hallucinations and optimizing retrieval precision.
                     </p>
                     <div style="display: flex; gap: 8px;">
                         <span class="text-small" style="color: #10b981;">#RAG</span>
@@ -216,6 +251,25 @@
             </div>
         </section>
 
+        <!-- Education -->
+        <section id="education">
+            <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Education</h2>
+            <div class="bento-grid">
+                <div class="glass-card col-6 reveal">
+                    <h3 style="font-size: 20px; margin-bottom: 8px;"><i data-lucide="graduation-cap" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> M.Tech, Computer Technology</h3>
+                    <p class="text-small gradient-text" style="margin-bottom: 8px;">Indian Institute of Technology Delhi</p>
+                    <p class="experience-meta">2017 – 2019 · New Delhi, India</p>
+                    <p class="text-small text-muted" style="margin-top: 12px;">CGPA: 8.48</p>
+                </div>
+                <div class="glass-card col-6 reveal">
+                    <h3 style="font-size: 20px; margin-bottom: 8px;"><i data-lucide="award" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> B.E., Electronics &amp; Communication</h3>
+                    <p class="text-small gradient-text" style="margin-bottom: 8px;">UIET, Panjab University</p>
+                    <p class="experience-meta">2012 – 2016 · Chandigarh, India</p>
+                    <p class="text-small text-muted" style="margin-top: 12px;">CGPA: 8.37 (Hons.)</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Experience Timeline -->
         <section id="experience">
             <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Experience</h2>
@@ -226,6 +280,7 @@
                         <div>
                             <h3 style="font-size: 20px;">AVP, Python Engineer FX (Gen AI)</h3>
                             <p class="text-small gradient-text">Citi</p>
+                            <p class="experience-meta">Aug 2025 – Present · Pune, India</p>
                         </div>
                     </div>
                     <ul class="text-small text-muted" style="padding-left: 20px;">
@@ -240,6 +295,7 @@
                         <div>
                             <h3 style="font-size: 20px;">Senior Data Scientist</h3>
                             <p class="text-small gradient-text">Dataeaze Systems</p>
+                            <p class="experience-meta">Apr 2022 – Aug 2025 · Pune, India</p>
                         </div>
                     </div>
                     <ul class="text-small text-muted" style="padding-left: 20px;">

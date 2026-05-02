@@ -181,6 +181,83 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- Hero proof strip --- */
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.hero-stat {
+    padding: 20px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.hero-stat:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background: rgba(139, 92, 246, 0.06);
+}
+
+.hero-stat-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 800;
+    line-height: 1.15;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+
+.hero-stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+@media (max-width: 768px) {
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Nav (wrap on narrow screens) --- */
+
+.nav-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+    .nav-inner {
+        justify-content: center;
+        width: 100%;
+        margin-top: 12px;
+    }
+}
+
+/* --- Experience meta (dates / location) --- */
+
+.experience-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
 /* --- Certification Grid --- */
 
 .cert-grid {

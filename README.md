@@ -6,7 +6,7 @@ This repository hosts my personal resume and portfolio website, built with simpl
 
 ## 📂 Files
 - `index.html` — Main website content
-- `style.css` — Stylesheet for the site
+- `styles.css` — Stylesheet for the site
 - `Resume_varun_sood.pdf` — My latest resume (available for download from the site)
 
 ## 🚀 Setup & Deployment
@@ -16,7 +16,7 @@ This repository hosts my personal resume and portfolio website, built with simpl
    cd varunsood189.github.io
    ```
 
-2. Add/Update files (`index.html`, `style.css`, `Resume_varun_sood.pdf`).
+2. Add/Update files (`index.html`, `styles.css`, `Resume_varun_sood.pdf`).
 
 3. Commit and push changes:
    ```bash
@@ -33,7 +33,7 @@ This repository hosts my personal resume and portfolio website, built with simpl
 ## ✨ Features
 - Responsive, mobile-friendly design
 - Resume download link
-- Sections for About, Experience, Projects, Education, Skills, and Contact
+- Sections for About, Projects, Insights, Certifications, Education, Experience, and Contact
 
 ---
 Built with ❤️ and hosted on **GitHub Pages**.
