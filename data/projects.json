@@ -1,0 +1,273 @@
+{
+  "generatedAt": "2026-05-18T08:21:26",
+  "top3": [
+    "knowledge-graph",
+    "stockwise",
+    "task-link"
+  ],
+  "projects": [
+    {
+      "id": "knowledge-graph",
+      "name": "System Design Knowledge Graph",
+      "assignment": 5,
+      "tagline": "FastAPI · NetworkX · trafilatura · [FastMCP](https://github.com/jlowin/fastmcp) · Gemini JSON planner · optional LLM Gateway V2",
+      "description": "An AI-powered evolving knowledge graph for system design learning. Ingest engineering blog URLs, extract concepts and relationships with LLM agents, persist an evolving graph in `data/graph.json`, and generate contextual learning recommendations.",
+      "highlights": [
+        "LLM orchestrator: Gemini chooses MCP tools each turn (extract → concepts → relationships → merge → recommendations)",
+        "**Live agent log** in the UI via Server-Sent Events (`POST /ingest/stream`)",
+        "Structured JSON agents: Pydantic-validated concept, relationship, and recommendation outputs (`prompts/*.txt`)",
+        "Persistent graph: NetworkX merged into `data/graph.json` with Mermaid visualization"
+      ],
+      "techStack": [
+        "FastAPI",
+        "Gemini",
+        "MCP",
+        "FastMCP",
+        "NetworkX",
+        "Pydantic",
+        "LLM",
+        "trafilatura",
+        "Gemini JSON planner",
+        "optional LLM Gateway V2"
+      ],
+      "category": "Full-stack AI",
+      "repoUrl": "https://github.com/varunsood189/system-design-knowledge-graph",
+      "extraRepos": [],
+      "demoType": "web",
+      "diagram": {
+        "type": "mermaid",
+        "content": "flowchart TB\n    subgraph Client\n        UI[frontend/index.html]\n    end\n\n    subgraph App[\"FastAPI :8000\"]\n        API[backend/main.py]\n        LOOP[backend/agent_loop.py]\n        PLAN[backend/llm_planner.py]\n        SSE[backend/agent_orchestrator.py]\n        GM[GraphManager]\n    end\n\n    subgraph MCP[\"mcp_server.py stdio\"]\n        T1[extract_article_tool]\n        T2[get_graph_summary]\n        T3[extract_concepts]\n        T4[extract_relationships]\n        T5[merge_graph]\n        T6[generate_recommendations]\n    end\n\n    subgraph InnerLLM[\"Inside MCP tools\"]\n        A1[concept_agent]\n        A2[relationship_agent]\n        A3[recommendation_agent]\n        LLM[backend/utils/llm.py]\n    end\n\n    UI -->|POST /ingest/stream| API\n    API --> SSE --> LOOP\n    LOOP -->|Gemini JSON planner| PLAN\n    LOOP -->|fastmcp Client| MCP\n    T1 --> T2 --> T3 --> T4 --> T5 --> T6\n    T3 & T4 & T6 --> InnerLLM\n    InnerLLM --> LLM\n    T5 --> GM\n    GM --> JSON[(data/graph.json)]\n    LOOP --> UI"
+      },
+      "example": "git clone <your-repo-url>\ncd system-design-knowledge-graph\ncp .env.example .env\n# Edit .env locally only — never commit this file\nuv sync --extra dev",
+      "screenshot": "assets/screenshots/knowledge-graph.webp",
+      "complexityScore": 100,
+      "infoScore": 100,
+      "featuredRank": 1
+    },
+    {
+      "id": "stockwise",
+      "name": "StockWise",
+      "assignment": 5,
+      "tagline": "AI-driven stock recommendations with portfolio tracking, news, and Gemini-powered analysis",
+      "description": "AI-driven stock recommendation web application with portfolio tracking, market news, technical analysis, and Google Gemini–powered sentiment and explanations.",
+      "highlights": [],
+      "techStack": [
+        "FastAPI",
+        "React",
+        "TypeScript",
+        "Gemini",
+        "PostgreSQL",
+        "Redis",
+        "Kafka",
+        "Pydantic",
+        "Python",
+        "LLM"
+      ],
+      "category": "Full-stack AI",
+      "repoUrl": null,
+      "extraRepos": [],
+      "demoType": "web",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "from utils.llm import llm\nfrom utils.parser import safe_parse_json\nfrom schemas.models import LLMSentimentResponse\n\nraw = await llm.generate_json(prompt, system_instruction=system)\nparsed = safe_parse_json(raw, LLMSentimentResponse)",
+      "screenshot": "assets/screenshots/stockwise.webp",
+      "complexityScore": 100,
+      "infoScore": 30,
+      "featuredRank": 2
+    },
+    {
+      "id": "task-link",
+      "name": "Task & Link Manager - Monorepo",
+      "assignment": 1,
+      "tagline": "Welcome to the **Task & Link Manager**, a powerful, developer-centric task management system designed to seamlessly brid",
+      "description": "Welcome to the **Task & Link Manager**, a powerful, developer-centric task management system designed to seamlessly bridge the gap between your browser and a persistent backend service.",
+      "highlights": [
+        "**[Task & Link Manager Extension](task-link-manager-extension)** - A Manifest V3 Chrome extension providing an offline-first task management experience.",
+        "**[Task & Link Manager Backend](task-link-manager-backend)** - An Express-based server with SQLite storage and a companion web portal.",
+        "**Frontend (Extension)**: Acts as the primary interface. It remains fully functional even when the server is offline, storing all data in the browser's local storage.",
+        "**Backend (Server)**: Acts as a centralized data vault. It allows you to backup your tasks and keep multiple browsers in sync. It also features its own web interface for managing tasks without the extension."
+      ],
+      "techStack": [
+        "Express",
+        "Chrome",
+        "Manifest V3",
+        "SQLite",
+        "Node.js",
+        "RAG"
+      ],
+      "category": "Full-stack",
+      "repoUrl": "https://github.com/varunsood189/task-link-manager-extension",
+      "extraRepos": [
+        "https://github.com/varunsood189/task-link-manager-extension",
+        "https://github.com/varunsood189/task-link-manager-backend"
+      ],
+      "demoType": "extension",
+      "diagram": {
+        "type": "text",
+        "content": ".\n├── task-link-manager-backend/    # Node.js + Express server\n│   ├── public/                   # Companion Web Portal\n│   ├── db.js                     # SQLite database configuration\n│   └── server.js                 # API routes & sync logic\n└── task-link-manager-extension/  # Chrome Extension (V3)\n    ├── popup.js                  # Extension logic & sync engine\n    ├── styles.css                # Premium HSL-based design system\n    └── index.html                # Extension popup interface"
+      },
+      "example": "",
+      "screenshot": "assets/screenshots/task-link.webp",
+      "complexityScore": 50,
+      "infoScore": 45,
+      "featuredRank": 3
+    },
+    {
+      "id": "promptforge",
+      "name": "PromptForge AI",
+      "assignment": 5,
+      "tagline": "Multi-agent pipeline that turns vague ideas into structured, dependency-aware implementation plans",
+      "description": "PromptForge AI turns vague software ideas into **structured, dependency-aware implementation plans** using a multi-step Gemini pipeline: intent analysis → planning → validation → self-check, with **Pydantic** enforcement at each JSON boundary.",
+      "highlights": [],
+      "techStack": [
+        "Gemini",
+        "MCP",
+        "Streamlit",
+        "Pydantic",
+        "Python",
+        "LLM"
+      ],
+      "category": "AI Agents",
+      "repoUrl": null,
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "User (Streamlit UI) \n  → [1. Intent Analysis LLM] \n      ↳ [2. Planner LLM] \n          ↳ [3. Validation LLM] \n              ↳ [4. Self-Check LLM]\n                  ↳ [5. Evaluation LLM]\n                      → Final Pipeline Result"
+      },
+      "example": "uv run python main.py \"Design a support copilot with MCP tools for tickets and order lookup.\"",
+      "screenshot": "assets/screenshots/promptforge.webp",
+      "complexityScore": 50,
+      "infoScore": 45,
+      "featuredRank": null
+    },
+    {
+      "id": "job-finder",
+      "name": "Job Feed Curator",
+      "assignment": 5,
+      "tagline": "LinkedIn feed curator: hide clutter, classify job posts with Gemini + Pydantic",
+      "description": "Chromium extension that **hides LinkedIn feed clutter** (promoted / ads-style cards) and **de-emphasizes posts that do not look like job leads**, plus a small **Python** service (`uv`) that classifies post snippets with a **Session 5–style qualified prompt** and **Pydantic**-validated JSON.",
+      "highlights": [
+        "This project is intended for **personal productivity** and **coursework**. It **does not** harvest credentials, automate logins, bulk-export LinkedIn data, or impersonate LinkedIn.",
+        "You are responsible for complying with **[LinkedIn’s User Agreement](https://www.linkedin.com/legal/user-agreement)** and **[Professional Community Policies](https://www.linkedin.com/legal/professional-community-policies)**. Client-side DOM filtering is a common pattern but **is not a guarantee** of compliance—use at your own risk.",
+        "The extension only changes how **your** browser **renders** pages you already opened, plus optional **local** HTTP calls to `127.0.0.1` when **Strict job mode** is enabled.",
+        "**Remove** the extension from `chrome://extensions` (or turn off all toggles and reload LinkedIn)."
+      ],
+      "techStack": [
+        "Chrome",
+        "Gemini",
+        "Pydantic",
+        "Python",
+        "LLM"
+      ],
+      "category": "Chrome Extension",
+      "repoUrl": null,
+      "extraRepos": [],
+      "demoType": "extension",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "cd \"/path/to/Job finder\"\nuv sync",
+      "screenshot": "assets/screenshots/job-finder.webp",
+      "complexityScore": 40,
+      "infoScore": 25,
+      "featuredRank": null
+    },
+    {
+      "id": "stock-intel",
+      "name": "Stock News + Price Linking Agent (Chrome Side Panel)",
+      "assignment": 3,
+      "tagline": "This project is a Chrome Side Panel extension for multi-step stock research:",
+      "description": "This project is a Chrome Side Panel extension for multi-step stock research:",
+      "highlights": [
+        "fetch latest company news,",
+        "fetch stock prices for the same window,",
+        "link news dates with price moves,",
+        "return a 1-month buy/not-buy decision,"
+      ],
+      "techStack": [
+        "Chrome",
+        "Gemini",
+        "Yahoo"
+      ],
+      "category": "Chrome Extension",
+      "repoUrl": "https://github.com/varunsood189/stock-intelligence-platform",
+      "extraRepos": [],
+      "demoType": "extension",
+      "diagram": {
+        "type": "text",
+        "content": "┌─────────────────────────────────────────────────────────────────┐\n│                         Chrome Side Panel                      │\n│  UI + Agent Flow (popup_clean.js)                             │\n│  - Get Stock From Website                                     │\n│  - Run Multi-step Research                                    │\n│  - Test Direct Yahoo                                          │\n│  - Copy Trace                                                 │\n└───────────────┬───────────────────────────────┬───────────────┘\n                │                               │\n                │                               │\n                ▼                               ▼\n     ┌───────────────────────┐        ┌──────────────────────────┐\n     │ Gemini API            │        │ External Market/News APIs │\n     │ (generateContent)     │        │ - Google News RSS         │\n     │ model: 2.5-flash-lite │        │ - Yahoo chart/search      │\n     └───────────────────────┘        └──────────────────────────┘\n                │\n                │ (tool orchestration + history)\n                ▼\n    ┌────────────────────────────────────────────────────────────┐\n    │ Direct Data Path in popup_clean.js                        │\n    │ get_stock_prices -> Yahoo chart APIs                      │\n    │ resolve_ticker   -> NSE/BSE API + Yahoo fallback + fuzzy  │\n    └────────────────────────────────────────────────────────────┘"
+      },
+      "example": "python3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt",
+      "screenshot": "assets/screenshots/stock-intel.webp",
+      "complexityScore": 35,
+      "infoScore": 55,
+      "featuredRank": null
+    },
+    {
+      "id": "mcp-prefab",
+      "name": "Assignment 4: MCP Server with Internet + CRUD + Prefab UI",
+      "assignment": 4,
+      "tagline": "A working **Model Context Protocol (MCP) server** built with [FastMCP](https://github.com/jlowin/fastmcp), exposing thre",
+      "description": "A working **Model Context Protocol (MCP) server** built with [FastMCP](https://github.com/jlowin/fastmcp), exposing three tools — internet fetch, local file CRUD, and a Prefab UI dashboard — to any MCP-compatible client (Claude, Cursor, or a custom script).",
+      "highlights": [],
+      "techStack": [
+        "Gemini",
+        "MCP",
+        "FastMCP",
+        "Streamlit",
+        "Python",
+        "LLM",
+        "Prefab"
+      ],
+      "category": "MCP / AI Tools",
+      "repoUrl": "https://github.com/varunsood189/mcp_server_prefab",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "Entry Points\n├── fastmcp dev apps server.py   (browser, MCP protocol)\n├── python client_demo.py        (stdio transport)\n└── Any LLM MCP client           (MCP protocol)\n         |\n         v\n    server.py  (FastMCP server)\n    ├── fetch_company_ownership  -->  Wikipedia REST + MediaWiki APIs\n    ├── local_file_crud          -->  data/ folder (sandboxed)\n    └── ownership_dashboard      -->  data/ folder (read)\n                                 -->  Prefab browser preview"
+      },
+      "example": "cd \"assignment_mcp_prefab\"\npython -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt",
+      "screenshot": "assets/screenshots/mcp-prefab.webp",
+      "complexityScore": 30,
+      "infoScore": 60,
+      "featuredRank": null
+    },
+    {
+      "id": "research-pulse",
+      "name": "ResearchPulse",
+      "assignment": 2,
+      "tagline": "Chrome extension (Manifest V3) that summarizes **research articles and research-related web pages**, with optional **cit",
+      "description": "Chrome extension (Manifest V3) that summarizes **research articles and research-related web pages**, with optional **citations** and **follow-up Q&A**, using **Google Gemini**. The API key is **never stored in this repository**—only in your browser after you enter it in the extension settings.",
+      "highlights": [
+        "**No API keys, tokens, or secrets** are hardcoded in the source files.",
+        "Keys live only in **`chrome.storage.local`** on each user’s machine after they save settings in the side panel.",
+        "Before pushing, avoid committing browser export files, screenshots of settings, or any file that contains your real key.",
+        "**Google Chrome** (or another Chromium browser with side panel support)."
+      ],
+      "techStack": [
+        "Chrome",
+        "Manifest V3",
+        "Gemini",
+        "RAG"
+      ],
+      "category": "Chrome Extension",
+      "repoUrl": "https://github.com/varunsood189/summerize-research-paper",
+      "extraRepos": [],
+      "demoType": "extension",
+      "diagram": {
+        "type": "text",
+        "content": "manifest.json      # Extension manifest\nservice-worker.js  # Gemini (see GEMINI_MODEL), shared generateContent helper, arXiv/PMC/citation resolution, summary JSON + citation metadata\ncontent-script.js  # Detects papers / page context on matched sites\nsidepanel.html     # Side panel markup (summary type + citations strip)\nsidepanel.js       # UI logic, storage, save/resume/history, citation fallbacks\nsidepanel.css      # Styles\nicons/             # Extension icons (add these locally)"
+      },
+      "example": "",
+      "screenshot": "assets/screenshots/research-pulse.webp",
+      "complexityScore": 15,
+      "infoScore": 45,
+      "featuredRank": null
+    }
+  ]
+}

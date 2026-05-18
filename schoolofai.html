@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School of AI Projects | Varun Sood</title>
+    <meta name="description" content="School of AI assignment portfolio — all projects sorted by complexity and documentation.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/schoolofai.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="catalog" data-projects-url="data/projects.json">
+    <nav class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:24px 0;gap:12px;">
+        <a href="index.html" class="gradient-text" style="font-size:24px;font-weight:800;text-decoration:none;letter-spacing:-1px;">VS</a>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-link" style="text-decoration:none;color:inherit;">Home</a>
+            <a href="schoolofai.html" class="nav-link" style="text-decoration:none;color:inherit;">School of AI</a>
+            <a href="index.html#contact" class="btn btn-primary" style="padding:8px 20px;font-size:13px;">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-bottom:80px;">
+        <section style="padding:40px 0 24px;text-align:center;">
+            <h1 style="font-size:clamp(32px,6vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;">
+                <span class="gradient-text">School of AI</span> Projects
+            </h1>
+            <p class="text-muted" style="max-width:640px;margin:0 auto;">All assignment projects sorted by complexity and README depth.</p>
+        </section>
+
+        <div class="toolbar">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select">
+                <option value="complexity">Complexity (default)</option>
+                <option value="info">Info score</option>
+                <option value="assignment">Assignment (1→5)</option>
+            </select>
+            <div class="filter-chips">
+                <button type="button" class="chip active" data-filter="all">All</button>
+                <button type="button" class="chip" data-filter="Chrome">Chrome</button>
+                <button type="button" class="chip" data-filter="MCP">MCP</button>
+                <button type="button" class="chip" data-filter="FastAPI">FastAPI</button>
+                <button type="button" class="chip" data-filter="Agents">Agents</button>
+                <button type="button" class="chip" data-filter="Full-stack">Full-stack</button>
+            </div>
+        </div>
+
+        <div id="project-list">
+            <p class="text-muted">Loading projects…</p>
+        </div>
+    </main>
+
+    <footer class="container" style="padding:40px 0;border-top:1px solid var(--glass-border);text-align:center;">
+        <p class="text-muted text-small"><a href="index.html" style="color:var(--accent-primary);text-decoration:none;">← Back to homepage</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: false, theme: 'dark' });</script>
+    <script src="js/schoolofai.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

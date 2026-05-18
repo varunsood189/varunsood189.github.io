@@ -8,6 +8,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/schoolofai.css">
     
     <!-- Icons (Lucide) -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,6 +23,7 @@
         <div class="nav-inner">
             <a href="#about" style="text-decoration: none; color: inherit;" class="nav-link">About</a>
             <a href="#projects" style="text-decoration: none; color: inherit;" class="nav-link">Projects</a>
+            <a href="schoolofai.html" style="text-decoration: none; color: inherit;" class="nav-link">School of AI</a>
             <a href="#insights" style="text-decoration: none; color: inherit;" class="nav-link">Insights</a>
             <a href="#certifications" style="text-decoration: none; color: inherit;" class="nav-link">Certs</a>
             <a href="#education" style="text-decoration: none; color: inherit;" class="nav-link">Education</a>
@@ -122,6 +124,19 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- School of AI Featured (top 3) -->
+        <section id="schoolofai">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px;">
+                <h2 class="reveal" style="font-size: 32px; margin: 0;">School of AI — Featured</h2>
+                <a href="schoolofai.html" class="btn glass-card reveal text-small" style="padding: 10px 20px; background: rgba(255,255,255,0.05); text-decoration: none; color: inherit;">
+                    Explore all projects by complexity →
+                </a>
+            </div>
+            <div id="schoolofai-featured-grid" class="bento-grid">
+                <p class="text-muted col-12">Loading School of AI projects…</p>
             </div>
         </section>
 
@@ -346,6 +361,12 @@
     <div id="back-to-top" title="Back to Top">
         <i data-lucide="chevron-up"></i>
     </div>
+
+    <!-- School of AI featured projects -->
+    <script>document.body.dataset.page = 'embed'; document.body.dataset.projectsUrl = 'data/projects.json';</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: false, theme: 'dark' });</script>
+    <script src="js/schoolofai.js"></script>
 
     <!-- Scripts -->
     <script>
