@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-18T08:21:26",
+  "generatedAt": "2026-05-18T08:45:45",
   "top3": [
     "knowledge-graph",
-    "stockwise",
-    "task-link"
+    "task-link",
+    "stock-intel"
   ],
   "projects": [
     {
@@ -45,39 +45,6 @@
       "featuredRank": 1
     },
     {
-      "id": "stockwise",
-      "name": "StockWise",
-      "assignment": 5,
-      "tagline": "AI-driven stock recommendations with portfolio tracking, news, and Gemini-powered analysis",
-      "description": "AI-driven stock recommendation web application with portfolio tracking, market news, technical analysis, and Google Gemini–powered sentiment and explanations.",
-      "highlights": [],
-      "techStack": [
-        "FastAPI",
-        "React",
-        "TypeScript",
-        "Gemini",
-        "PostgreSQL",
-        "Redis",
-        "Kafka",
-        "Pydantic",
-        "Python",
-        "LLM"
-      ],
-      "category": "Full-stack AI",
-      "repoUrl": null,
-      "extraRepos": [],
-      "demoType": "web",
-      "diagram": {
-        "type": "none",
-        "content": ""
-      },
-      "example": "from utils.llm import llm\nfrom utils.parser import safe_parse_json\nfrom schemas.models import LLMSentimentResponse\n\nraw = await llm.generate_json(prompt, system_instruction=system)\nparsed = safe_parse_json(raw, LLMSentimentResponse)",
-      "screenshot": "assets/screenshots/stockwise.webp",
-      "complexityScore": 100,
-      "infoScore": 30,
-      "featuredRank": 2
-    },
-    {
       "id": "task-link",
       "name": "Task & Link Manager - Monorepo",
       "assignment": 1,
@@ -112,69 +79,7 @@
       "screenshot": "assets/screenshots/task-link.webp",
       "complexityScore": 50,
       "infoScore": 45,
-      "featuredRank": 3
-    },
-    {
-      "id": "promptforge",
-      "name": "PromptForge AI",
-      "assignment": 5,
-      "tagline": "Multi-agent pipeline that turns vague ideas into structured, dependency-aware implementation plans",
-      "description": "PromptForge AI turns vague software ideas into **structured, dependency-aware implementation plans** using a multi-step Gemini pipeline: intent analysis → planning → validation → self-check, with **Pydantic** enforcement at each JSON boundary.",
-      "highlights": [],
-      "techStack": [
-        "Gemini",
-        "MCP",
-        "Streamlit",
-        "Pydantic",
-        "Python",
-        "LLM"
-      ],
-      "category": "AI Agents",
-      "repoUrl": null,
-      "extraRepos": [],
-      "demoType": "local",
-      "diagram": {
-        "type": "text",
-        "content": "User (Streamlit UI) \n  → [1. Intent Analysis LLM] \n      ↳ [2. Planner LLM] \n          ↳ [3. Validation LLM] \n              ↳ [4. Self-Check LLM]\n                  ↳ [5. Evaluation LLM]\n                      → Final Pipeline Result"
-      },
-      "example": "uv run python main.py \"Design a support copilot with MCP tools for tickets and order lookup.\"",
-      "screenshot": "assets/screenshots/promptforge.webp",
-      "complexityScore": 50,
-      "infoScore": 45,
-      "featuredRank": null
-    },
-    {
-      "id": "job-finder",
-      "name": "Job Feed Curator",
-      "assignment": 5,
-      "tagline": "LinkedIn feed curator: hide clutter, classify job posts with Gemini + Pydantic",
-      "description": "Chromium extension that **hides LinkedIn feed clutter** (promoted / ads-style cards) and **de-emphasizes posts that do not look like job leads**, plus a small **Python** service (`uv`) that classifies post snippets with a **Session 5–style qualified prompt** and **Pydantic**-validated JSON.",
-      "highlights": [
-        "This project is intended for **personal productivity** and **coursework**. It **does not** harvest credentials, automate logins, bulk-export LinkedIn data, or impersonate LinkedIn.",
-        "You are responsible for complying with **[LinkedIn’s User Agreement](https://www.linkedin.com/legal/user-agreement)** and **[Professional Community Policies](https://www.linkedin.com/legal/professional-community-policies)**. Client-side DOM filtering is a common pattern but **is not a guarantee** of compliance—use at your own risk.",
-        "The extension only changes how **your** browser **renders** pages you already opened, plus optional **local** HTTP calls to `127.0.0.1` when **Strict job mode** is enabled.",
-        "**Remove** the extension from `chrome://extensions` (or turn off all toggles and reload LinkedIn)."
-      ],
-      "techStack": [
-        "Chrome",
-        "Gemini",
-        "Pydantic",
-        "Python",
-        "LLM"
-      ],
-      "category": "Chrome Extension",
-      "repoUrl": null,
-      "extraRepos": [],
-      "demoType": "extension",
-      "diagram": {
-        "type": "none",
-        "content": ""
-      },
-      "example": "cd \"/path/to/Job finder\"\nuv sync",
-      "screenshot": "assets/screenshots/job-finder.webp",
-      "complexityScore": 40,
-      "infoScore": 25,
-      "featuredRank": null
+      "featuredRank": 2
     },
     {
       "id": "stock-intel",
@@ -205,7 +110,7 @@
       "screenshot": "assets/screenshots/stock-intel.webp",
       "complexityScore": 35,
       "infoScore": 55,
-      "featuredRank": null
+      "featuredRank": 3
     },
     {
       "id": "mcp-prefab",

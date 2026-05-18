@@ -58,9 +58,13 @@
     }
 
     function thumbHtml(p, large) {
-        const grad = GRADIENTS[p.id] || 'linear-gradient(135deg, #8b5cf6, #3b82f6)';
         const h = large ? 160 : 72;
-        return `<div class="card-thumb" style="height:${h}px;background:${grad}" aria-hidden="true">${initials(p.name)}</div>`;
+        const shot = p.screenshot || 'assets/screenshots/' + p.id + '.webp';
+        const grad = GRADIENTS[p.id] || 'linear-gradient(135deg, #8b5cf6, #3b82f6)';
+        return `<div class="card-thumb" style="height:${h}px;background:${grad};overflow:hidden;position:relative;">
+            <img src="${escapeHtml(shot)}" alt="" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:rgba(255,255,255,0.2);">${initials(p.name)}</span>
+        </div>`;
     }
 
     function scoreBlockHtml(p) {
