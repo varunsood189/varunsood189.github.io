@@ -2,7 +2,7 @@
   "generatedAt": "2026-05-18T08:45:45",
   "top3": [
     "knowledge-graph",
-    "task-link",
+    "research-pulse",
     "stock-intel"
   ],
   "projects": [
@@ -79,7 +79,7 @@
       "screenshot": "assets/screenshots/task-link.webp",
       "complexityScore": 50,
       "infoScore": 45,
-      "featuredRank": 2
+      "featuredRank": null
     },
     {
       "id": "stock-intel",
@@ -172,7 +172,7 @@
       "screenshot": "assets/screenshots/research-pulse.webp",
       "complexityScore": 15,
       "infoScore": 45,
-      "featuredRank": null
+      "featuredRank": 2
     }
   ]
 }
