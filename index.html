@@ -145,64 +145,70 @@
             </div>
         </section>
 
-        <!-- Highlighted Projects -->
+        <!-- Highlighted Projects — aligned with GitHub pins -->
         <section id="projects">
             <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Key Projects</h2>
             <div class="bento-grid">
-                
-                <!-- Project 1: ResearchPulse -->
-                <div class="glass-card col-8 reveal" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent);">
-                    <div style="font-size: 12px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">CHROME EXTENSION | GEN-AI</div>
-                    <h3 style="margin-bottom: 12px; font-size: 28px;">ResearchPulse</h3>
+
+                <!-- 1. eag-cognitive-agent -->
+                <div class="glass-card col-8 reveal" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);">
+                    <div style="font-size: 12px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">AGENTS · RAG · MCP</div>
+                    <h3 style="margin-bottom: 12px; font-size: 28px;">EAG Cognitive Agent</h3>
                     <p class="text-muted" style="margin-bottom: 12px;">
-                        A Manifest V3 extension that summarizes research articles (arXiv, PMC, MDPI) in real-time. Features follow-up Q&A, privacy-first local key storage, and automated citations using the Google Gemini API.
+                        Four-role agent loop — Memory, Perception, Decision, Action — with FAISS vector memory, MCP tools, and pytest coverage. Orchestrates tool use through an LLM gateway with embed + chat.
                     </p>
-                    <p class="text-small text-muted" style="margin-bottom: 20px;"><strong style="color: var(--text-main);">Impact:</strong> Multi-source research workflow in one click—summaries, Q&amp;A, and citations without leaving the paper.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 20px;"><strong style="color: var(--text-main);">Notice:</strong> Role separation + RAG memory + MCP tools in one runnable agent, with tests that do not require the gateway.</p>
                     <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-                        <a href="https://github.com/varunsood189/summerize-research-paper" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">View Code</a>
-                        <span class="text-small text-muted"><i data-lucide="layers" style="width: 14px; vertical-align: middle;"></i> Gemini API · Manifest V3</span>
+                        <a href="https://github.com/varunsood189/eag-cognitive-agent" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">View Code</a>
+                        <span class="text-small text-muted"><i data-lucide="layers" style="width: 14px; vertical-align: middle;"></i> FAISS · MCP · pytest</span>
                     </div>
                 </div>
 
-                <!-- Project 2: Task & Link Manager -->
-                <div class="glass-card col-4 reveal" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);">
-                    <div style="font-size: 12px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">FULLSTACK | PRODUCTIVITY</div>
-                    <h3 style="margin-bottom: 12px;">Task-Link Suite</h3>
+                <!-- 2. A27-directory-agent -->
+                <div class="glass-card col-4 reveal" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent);">
+                    <div style="font-size: 12px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">MCP · HARNESS</div>
+                    <h3 style="margin-bottom: 12px;">Directory Agent</h3>
                     <p class="text-small text-muted" style="margin-bottom: 8px;">
-                        Offline-first task manager with a robust bi-directional sync engine and Chrome extension integration.
+                        MCP Directory agent for customer dedupe and “who do we know” lookups across two books, with a scored harness.
                     </p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Shipped:</strong> Backend + extension repos with sync-first UX.</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
-                        <a href="https://github.com/varunsood189/task-link-manager-backend" class="text-small gradient-text" style="text-decoration: none;">Backend →</a>
-                        <a href="https://github.com/varunsood189/task-link-manager-extension" class="text-small gradient-text" style="text-decoration: none;">Extension →</a>
-                    </div>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Proof:</strong> 54 pytest cases covering seat predicates, specs, and filed MCP bugs.</p>
+                    <a href="https://github.com/varunsood189/A27-directory-agent" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
                 </div>
 
-                <!-- Project 3: PEFT -->
-                <div class="glass-card col-4 reveal">
-                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">NOTES · LLM OPS</div>
-                    <h4 style="margin-bottom: 8px;">peft_techniques</h4>
-                    <p class="text-small text-muted" style="margin-bottom: 12px;">Deep dive into LoRA/QLoRA for memory-efficient LLM fine-tuning.</p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Focus:</strong> Low-rank adapters vs full fine-tunes.</p>
-                    <a href="https://github.com/varunsood189/peft_techniques" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
+                <!-- 3. system-design-knowledge-graph -->
+                <div class="glass-card col-6 reveal">
+                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">AGENTIC KG · FASTAPI</div>
+                    <h4 style="margin-bottom: 8px;">System Design Knowledge Graph</h4>
+                    <p class="text-small text-muted" style="margin-bottom: 12px;">Ingest engineering blogs, extract concepts/relationships with LLM agents, and grow a NetworkX graph with live SSE planner logs.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Stack:</strong> FastAPI · FastMCP · Gemini JSON planner · NetworkX</p>
+                    <a href="https://github.com/varunsood189/system-design-knowledge-graph" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
                 </div>
 
-                <!-- Project 4: System Design -->
-                <div class="glass-card col-4 reveal">
-                    <div style="font-size: 11px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">INFRA · CI/CD</div>
-                    <h4 style="margin-bottom: 8px;">System_design_example</h4>
-                    <p class="text-small text-muted" style="margin-bottom: 12px;">Scalable AI infrastructure blueprints and CI/CD pipelines.</p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Scope:</strong> Reference layouts for training and deploy paths.</p>
-                    <a href="https://github.com/varunsood189/System_design_example" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
+                <!-- 4. ResearchPulse -->
+                <div class="glass-card col-6 reveal" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), transparent);">
+                    <div style="font-size: 11px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">CHROME EXTENSION · GEN-AI</div>
+                    <h4 style="margin-bottom: 8px;">ResearchPulse</h4>
+                    <p class="text-small text-muted" style="margin-bottom: 12px;">Manifest V3 side panel that summarizes research pages (arXiv, PMC, and similar), with follow-up Q&amp;A and citations via Gemini. API keys stay in local browser storage only.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Repo:</strong> <code style="font-size: 12px;">summerize-research-paper</code></p>
+                    <a href="https://github.com/varunsood189/summerize-research-paper" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
                 </div>
 
-                <!-- Project 5: CV Improver -->
-                <div class="glass-card col-4 reveal">
-                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">GEN-AI · PRODUCTIVITY</div>
-                    <h4 style="margin-bottom: 8px;">CV_Improver_with_LLMs</h4>
-                    <p class="text-small text-muted" style="margin-bottom: 12px;">AI-powered resume optimization and analysis tool.</p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Goal:</strong> Structured feedback from LLM passes on CV text.</p>
-                    <a href="https://github.com/varunsood189/CV_Improver_with_LLMs" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
+                <!-- 5. stock-intelligence-platform -->
+                <div class="glass-card col-6 reveal">
+                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">TOOL-USING AGENT · CHROME</div>
+                    <h4 style="margin-bottom: 8px;">Stock Intelligence Platform</h4>
+                    <p class="text-small text-muted" style="margin-bottom: 12px;">Chrome Side Panel agent that fetches news and prices, links dates to price moves, and returns a short buy/not-buy view with a copyable tool trace.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Note:</strong> Educational research tool — not investment advice.</p>
+                    <a href="https://github.com/varunsood189/stock-intelligence-platform" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
+                </div>
+
+                <!-- 6. agent-observatory -->
+                <div class="glass-card col-6 reveal" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), transparent);">
+                    <div style="font-size: 11px; color: #10b981; font-weight: 700; margin-bottom: 8px;">OBSERVABILITY · SECURITY</div>
+                    <h4 style="margin-bottom: 8px;">Agent Observatory</h4>
+                    <p class="text-small text-muted" style="margin-bottom: 12px;">Live UI for coding-agent runs: graph nodes, command red→green, diffs, and a refused destructive path. Includes bug fixes for SSRF on agent_trace and irreversible git subcommands.</p>
+                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">PRs:</strong> S17Code destructive-git guard · glc_v5 SSRF fix</p>
+                    <a href="https://github.com/varunsood189/agent-observatory" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
                 </div>
             </div>
         </section>
