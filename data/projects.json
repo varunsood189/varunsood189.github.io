@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-18T08:45:45",
+  "generatedAt": "2026-11-23T22:54:10",
   "top3": [
     "knowledge-graph",
-    "research-pulse",
-    "stock-intel"
+    "growing-graph",
+    "eag-cognitive"
   ],
   "projects": [
     {
@@ -43,6 +43,38 @@
       "complexityScore": 100,
       "infoScore": 100,
       "featuredRank": 1
+    },
+    {
+      "id": "growing-graph",
+      "name": "Assignment 8 — Multi-Agent Growing-Graph Orchestrator",
+      "assignment": 8,
+      "tagline": "This repository contains **Session 8 (S8)** of the EAGV3 course: a multi-agent AI system where a **directed graph of skills** is the agent loop. Each node is a ",
+      "description": "This repository contains **Session 8 (S8)** of the EAGV3 course: a multi-agent AI system where a **directed graph of skills** is the agent loop. Each node is a specialized LLM-backed role (Planner, Researcher, Coder, Formatter, etc.); edges carry typed results between nodes; and the graph **grows at runtime** as skills finish and the orchestrator splices in successors.",
+      "highlights": [
+        "Directed graph of skills is the agent loop",
+        "Each node is an LLM-backed role: Planner, Researcher, Coder, Formatter",
+        "The graph grows at runtime as skills finish and the orchestrator splices in successors",
+        "LLM Gateway V8 is a FastAPI service for chat, routing, and embeddings"
+      ],
+      "techStack": [
+        "FastAPI",
+        "NetworkX",
+        "LLM",
+        "FAISS"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/Assignment-8",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "User Query\n    │\n    ▼\n┌─────────────────────────────────────────────────────────┐\n│  flow.py — Executor                                      │\n│  • Builds / resumes a NetworkX DiGraph                   │\n│  • Finds \"ready\" nodes (all predecessors complete)       │\n│  • Runs ready nodes in parallel (asyncio.gather)         │\n│  • Extends graph after each success                      │\n│  • Handles failures via recovery.py                      │\n└─────────────────────────────────────────────────────────┘\n    │\n    ├── skills.py — render prompt, call gateway or sandbox\n    ├── gateway.py — bridge to LLM Gateway V8 (:8108)\n    ├── memory.py — FAISS vector memory (Session 7 carryover)\n    ├── mcp_runner.py — multi-turn tool-use loop\n    └── persistence.py — session state on disk"
+      },
+      "example": "# One-time: init or clone, then secrets\ngit clone <your-repo-url> assignment-8 && cd assignment-8\ncp S8SharedCode/.env.example S8SharedCode/.env\n$EDITOR S8SharedCode/.env    # add keys locally — .env is gitignored\n\n# Install (lockfiles are committed for reproducible uv sync)\ncd S8SharedCode/gateway && uv sync && cd ../..\ncd S8SharedCode/code && uv sync && cd ../..\n\n# Verify secrets stay untracked\ngit check-ignore -v S8SharedCode/.env   # should print a .gitignore rule",
+      "screenshot": "assets/screenshots/growing-graph.webp",
+      "complexityScore": 90,
+      "infoScore": 40,
+      "featuredRank": 2
     },
     {
       "id": "task-link",
@@ -110,7 +142,7 @@
       "screenshot": "assets/screenshots/stock-intel.webp",
       "complexityScore": 35,
       "infoScore": 55,
-      "featuredRank": 3
+      "featuredRank": null
     },
     {
       "id": "mcp-prefab",
@@ -143,6 +175,159 @@
       "featuredRank": null
     },
     {
+      "id": "s14-runtime",
+      "name": "S14Code",
+      "assignment": 14,
+      "tagline": "`S14Code` is the Session 14 runtime. It is the **entire Session 13 agent runtime** — a live task graph, scoped and provenance-bearing memory, Rohan's",
+      "description": "`S14Code` is the Session 14 runtime. It is the **entire Session 13 agent runtime** — a live task graph, scoped and provenance-bearing memory, Rohan's",
+      "highlights": [
+        "`s13code/core/live_graph/`: durable graph state, patches, event replay and bounded parallel execution",
+        "`s13code/core/memory/`: scope checks, provenance, contradiction history, semantic chunking and FAISS retrieval",
+        "`s13code/core/a2a_adapter/`: Agent Cards, JSON-RPC, SSE/push, official gRPC and trust checks",
+        "`s13code/gateway.py`: the only `S14Code → glc_v3` seam"
+      ],
+      "techStack": [
+        "FastAPI",
+        "Gemini",
+        "Python"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/S14Code",
+      "extraRepos": [],
+      "demoType": "web",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "ollama pull phi4\nollama pull nomic-embed-text\nollama serve",
+      "screenshot": "assets/screenshots/s14-runtime.webp",
+      "complexityScore": 30,
+      "infoScore": 60,
+      "featuredRank": null
+    },
+    {
+      "id": "eag-cognitive",
+      "name": "EAG Cognitive Agent",
+      "assignment": 7,
+      "tagline": "**EAG V3 Session 7** — four-role agentic architecture with **FAISS vector memory** (RAG): **Memory**, **Perception**, **Decision**, and **Action**, orchestrated",
+      "description": "**EAG V3 Session 7** — four-role agentic architecture with **FAISS vector memory** (RAG): **Memory**, **Perception**, **Decision**, and **Action**, orchestrated in `agent7.py` with eleven MCP tools and **LLM Gateway V7** (`/v1/embed` + chat).",
+      "highlights": [
+        "Perception: plans goals, marks progress, attaches artifact IDs when needed (Gemini `provider=g`).",
+        "Decision: sees **one** goal only; answers or calls a single tool.",
+        "Action: runs MCP tools; payloads >4KB → content-addressable `art:…` store.",
+        "Memory: vector search first (FAISS over embeddings), keyword fallback; `state/memory.json` + index files persist across runs (`c2`, `f2` need prior run state)."
+      ],
+      "techStack": [
+        "Gemini",
+        "MCP",
+        "Python",
+        "LLM",
+        "RAG",
+        "FAISS"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/eag-cognitive-agent",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "User query\n  → memory.remember(query)\n  → loop (max 24 iterations):\n       memory.read(query, history)\n       perception.observe → goal list + done flags\n       if all done → break\n       decision.next_step(ONE goal) → answer OR one MCP tool\n       action.execute → memory.record_outcome (+ artifact if large)\n  → final answer from run history"
+      },
+      "example": "git clone <your-repo-url>\ncd eag-cognitive-agent\ncp .env.example .env\n# Edit .env — add GEMINI_API_KEY (and optional TAVILY_API_KEY)\n\nuv sync",
+      "screenshot": "assets/screenshots/eag-cognitive.webp",
+      "complexityScore": 25,
+      "infoScore": 75,
+      "featuredRank": 3
+    },
+    {
+      "id": "browser-agents",
+      "name": "Assignment 9–10 — Browser & Computer-Use Agents",
+      "assignment": 9,
+      "tagline": "Browser skill on live web pages plus a computer-use skill for desktop apps, with an HTML replay report.",
+      "description": "Sessions 9 and 10 of EAG V3. A browser skill runs a four-layer cascade on live web pages, and a computer-use skill drives desktop apps through cua-driver, then writes an HTML replay report.",
+      "highlights": [
+        "**Session 9:** Browser skill — four-layer cascade on live web pages.",
+        "**Session 10:** Computer skill — desktop apps via cua-driver (see [docs/SESSION10_SUBMISSION.md](docs/SESSION10_SUBMISSION.md))."
+      ],
+      "techStack": [
+        "Python",
+        "LLM"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/Assignment-9",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "Turn 1  click  #12  Tasks filter → Text Generation\nTurn 2  click  #28  Sort menu\nTurn 3  click  #31  Most Likes\nTurn 4  scroll down\nTurn 5  done   success=true"
+      },
+      "example": "export QT_ACCESSIBILITY=1\ncua-driver doctor                    # AT-SPI + X11 OK\ncd llm_gatewayV9 && uv run main.py   # terminal 1 — port 8109\ncd S9SharedCode && ./run_computer_assignment.sh all\npython3 replay_viewer.py --open     # latest session report",
+      "screenshot": "assets/screenshots/browser-agents.webp",
+      "complexityScore": 20,
+      "infoScore": 55,
+      "featuredRank": null
+    },
+    {
+      "id": "s13-runtime",
+      "name": "S13Code",
+      "assignment": 13,
+      "tagline": "`S13Code` is the standalone Session 13 agent runtime. It implements a live task graph, scoped and provenance-bearing memory, Rohan's semantic chunking V2, and A",
+      "description": "`S13Code` is the standalone Session 13 agent runtime. It implements a live task graph, scoped and provenance-bearing memory, Rohan's semantic chunking V2, and Agent2Agent interoperability. It asks `glc_v3` for model completions over HTTP and never owns provider credentials.",
+      "highlights": [
+        "`s13code/core/live_graph/`: durable graph state, patches, event replay and bounded parallel execution",
+        "`s13code/core/memory/`: scope checks, provenance, contradiction history, semantic chunking and FAISS retrieval",
+        "`s13code/core/a2a_adapter/`: Agent Cards, JSON-RPC, SSE/push, official gRPC and trust checks",
+        "`s13code/gateway.py`: the only `S13Code → glc_v3` seam"
+      ],
+      "techStack": [
+        "Gemini",
+        "Python",
+        "FAISS"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/S13Code",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "ollama pull phi4\nollama pull nomic-embed-text\nollama serve",
+      "screenshot": "assets/screenshots/s13-runtime.webp",
+      "complexityScore": 15,
+      "infoScore": 60,
+      "featuredRank": null
+    },
+    {
+      "id": "s15-runtime",
+      "name": "S15Code — the budget-aware agent runtime",
+      "assignment": 15,
+      "tagline": "Session 15 of EAGV3. Hand a run a **ceiling** and a **principal**, and the agent plans against them: every node declares the capability tier it needs, the",
+      "description": "Session 15 of EAGV3. Hand a run a **ceiling** and a **principal**, and the agent plans against them: every node declares the capability tier it needs, the",
+      "highlights": [
+        "**No call is made without being metered.** The controller owns the transport;",
+        "**No run spends past its ceiling.** Enforcement is deterministic code. A budget"
+      ],
+      "techStack": [
+        "FastAPI",
+        "LLM",
+        "OpenTelemetry"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/S15Code",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "S15Code/\n├── s15code/\n│   ├── main.py            FastAPI app factory\n│   ├── cli.py             `s15code serve`\n│   ├── routes.py          runs, facts, documents, memory search, trace\n│   ├── a2a_routes.py      agent card + JSON-RPC\n│   ├── gateway.py         the gateway client (never holds a credential)\n│   ├── planner.py         the constrained GraphPatch proposal boundary\n│   ├── runtime.py         one request through the live graph\n│   ├── tools.py           the small non-browser skill surface\n│   ├── core/\n│   │   ├── live_graph/    executor, durable event journal, patches   (from S13)\n│   │   ├── memory/        typed scoped memory, semantic chunking     (from S13)\n│   │   └── a2a/           the agent-to-agent boundary                (from S13)\n│   ├── ui/                catalog, validator, surface, AG-UI, HITL   (from S14)\n│   ├── economics/         NEW — budget-aware planning\n│   │   ├── config.py        loads the three YAML files\n│   │   ├── pricing.py       per-model prices\n│   │   ├── tiers.py         the capability ladder; a node declares a tier\n│   │   ├── budget.py        allowance, spend, reservations, allocation\n│   │   ├── policy.py        proceed / downgrade / branch / refuse\n│   │   └── controller.py    the hard controller at the call seam\n│   ├── telemetry/         NEW — the same journal, as OTel spans\n│   │   └── spans.py         run → agent loop → plan → node → provider call\n│   └── evals/             NEW — did the answer RESOLVE the task?\n│       ├── config.py        the rubric, the bar and the judge panel, from YAML\n│       ├── judge.py         LLM-as-judge on a generic, task-agnostic rubric\n│       └── tasks.py         reads a task set; never contains one\n├── config/                tiers.yaml · pricing.yaml · budgets.yaml · evals.yaml\n├── proofs/                the generic proof harness\n│   └── tasks/               task sets, as DATA a reviewer can replace\n└── tests/"
+      },
+      "example": "uv sync\nuv run pytest -q\nuv run ruff check .\nuv run s15code serve            # http://127.0.0.1:8113",
+      "screenshot": "assets/screenshots/s15-runtime.webp",
+      "complexityScore": 15,
+      "infoScore": 55,
+      "featuredRank": null
+    },
+    {
       "id": "research-pulse",
       "name": "ResearchPulse",
       "assignment": 2,
@@ -172,7 +357,217 @@
       "screenshot": "assets/screenshots/research-pulse.webp",
       "complexityScore": 15,
       "infoScore": 45,
-      "featuredRank": 2
+      "featuredRank": null
+    },
+    {
+      "id": "directory-agent",
+      "name": "Directory Agent — AgentSwitch (Team 27)",
+      "assignment": 20,
+      "tagline": "Seat **27 · Directory**. Contacts spine (`Party` / `PartyRelationship`). One MCP agent for both books.",
+      "description": "Seat **27 · Directory**. Contacts spine (`Party` / `PartyRelationship`). One MCP agent for both books.",
+      "highlights": [
+        "[Gap report vs Attio](docs/gap-report.md)",
+        "[Bugs](docs/bugs.md) — **10 filed**",
+        "[Completeness audit](docs/completeness-audit.md)",
+        "[One-page HTML](docs/index.html) — open in a browser (tests, bugs, how to run)"
+      ],
+      "techStack": [
+        "MCP",
+        "Python"
+      ],
+      "category": "MCP / AI Tools",
+      "repoUrl": "https://github.com/varunsood189/A27-directory-agent",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "# Passwords live in .env (gitignored). Do not `source .env` — bash strips `!`.\npython3 src/run_agent.py --book keystone --request \"Who do we know at Hocking Hills Mower Works?\"\npython3 src/run_agent.py --book suryodaya\npython3 harness/run.py\n# Official server run (Our harness). No passwords: uses AGENTSWITCH_TOKEN.\npython -m harness.runner",
+      "screenshot": "assets/screenshots/directory-agent.webp",
+      "complexityScore": 15,
+      "infoScore": 40,
+      "featuredRank": null
+    },
+    {
+      "id": "job-finder",
+      "name": "Job Feed Curator",
+      "assignment": 5,
+      "tagline": "Chromium extension that **hides LinkedIn feed clutter** (promoted / ads-style cards) and **de-emphasizes posts that do not look like job leads**, plus a small *",
+      "description": "Chromium extension that **hides LinkedIn feed clutter** (promoted / ads-style cards) and **de-emphasizes posts that do not look like job leads**, plus a small **Python** service (`uv`) that classifies post snippets with a **Session 5–style qualified prompt** and **Pydantic**-validated JSON.",
+      "highlights": [
+        "Chrome extension hides promoted and ads-style cards in the LinkedIn feed",
+        "De-emphasizes posts that do not look like job leads",
+        "Optional local Python classifier on 127.0.0.1 for strict job mode",
+        "Classifications use a qualified prompt and Pydantic-validated JSON"
+      ],
+      "techStack": [
+        "Chrome",
+        "Pydantic",
+        "Python"
+      ],
+      "category": "Chrome Extension",
+      "repoUrl": null,
+      "extraRepos": [],
+      "demoType": "extension",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "",
+      "screenshot": "assets/screenshots/job-finder.webp",
+      "complexityScore": 15,
+      "infoScore": 30,
+      "featuredRank": null
+    },
+    {
+      "id": "agentswitch-advanced",
+      "name": "AgentSwitch Advanced seats",
+      "assignment": 28,
+      "tagline": "Eight student teams build agents for the AgentSwitch platform, one folder per seat: 28 EA, 29 Document Intake, 30 Market Research, 31 Order-to-Cash Watcher, 32 ",
+      "description": "Eight student teams build agents for the AgentSwitch platform, one folder per seat: 28 EA, 29 Document Intake, 30 Market Research, 31 Order-to-Cash Watcher, 32 Compliance Calendar, 33 Red Team, 34 Eval Harness, 35 Data Steward.",
+      "highlights": [
+        "Seat 28: Executive Assistant — daily briefing over mail, calendar, and tasks",
+        "Seat 29: Document Intake — draft bills from incoming documents with a review queue",
+        "Seat 30: Market Research — weekly competitor brief tied to the CRM pipeline",
+        "Seat 31: Order-to-Cash Watcher — stuck orders, overdue invoices, draft reminders",
+        "Seat 32: Compliance Calendar — next 90 days of statutory and contract due dates",
+        "Seat 33: Red Team — permission boundaries and prompt-injection probes",
+        "Seat 34: Eval Harness — shared rules, milestones, and evaluation design",
+        "Seat 35: Data Steward — duplicate parties and merge proposals for a person to approve"
+      ],
+      "techStack": [],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/agentswitch-advanced",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "",
+      "screenshot": "assets/screenshots/agentswitch-advanced.webp",
+      "complexityScore": 15,
+      "infoScore": 30,
+      "featuredRank": null
+    },
+    {
+      "id": "promptforge",
+      "name": "PromptForge AI",
+      "assignment": 5,
+      "tagline": "PromptForge AI turns vague software ideas into **structured, dependency-aware implementation plans** using a multi-step Gemini pipeline: intent analysis → plann",
+      "description": "PromptForge AI turns vague software ideas into **structured, dependency-aware implementation plans** using a multi-step Gemini pipeline: intent analysis → planning → validation → self-check, with **Pydantic** enforcement at each JSON boundary.",
+      "highlights": [
+        "Intent analysis turns a vague product idea into a structured brief",
+        "Planning decomposes the work into dependency-aware steps",
+        "Validation and self-check use Pydantic at each JSON boundary",
+        "Final qualified prompt is ready for a downstream coding agent"
+      ],
+      "techStack": [
+        "Gemini",
+        "Pydantic"
+      ],
+      "category": "AI Agents",
+      "repoUrl": null,
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "",
+      "screenshot": "assets/screenshots/promptforge.webp",
+      "complexityScore": 10,
+      "infoScore": 30,
+      "featuredRank": null
+    },
+    {
+      "id": "s16-runtime",
+      "name": "S16Code — a general live-graph agent",
+      "assignment": 16,
+      "tagline": "S16Code takes S15's durable graph, memory, A2A, UI, budget controller and telemetry as its foundation, then replaces the task-shaped planner with a",
+      "description": "S16Code takes S15's durable graph, memory, A2A, UI, budget controller and telemetry as its foundation, then replaces the task-shaped planner with a",
+      "highlights": [
+        "`s16code/capabilities.py` is the complete manifest the planner sees. It",
+        "`s16code/planner.py` asks for only the next useful frontier. A new task may",
+        "Independent tasks in one frontier run concurrently. Synthesis is held until",
+        "Before a terminal answer, a separate evidence-readiness pass checks the"
+      ],
+      "techStack": [
+        "Python"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/S16Code",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "goal → plan next frontier → run independent work concurrently\n     → observe real outcomes → critique evidence → expand or answer"
+      },
+      "example": "uv run python proofs/p_naive_vs_bounded.py    # naive vs gated vs bounded, same stream\nuv run python proofs/p_autonomy_bounds.py     # seven properties of the ceilings",
+      "screenshot": "assets/screenshots/s16-runtime.webp",
+      "complexityScore": 0,
+      "infoScore": 55,
+      "featuredRank": null
+    },
+    {
+      "id": "s18-eval",
+      "name": "S18Code",
+      "assignment": 18,
+      "tagline": "A small, honest evaluation harness for coding agents, built for Session 18 of EAG V3.",
+      "description": "A small, honest evaluation harness for coding agents, built for Session 18 of EAG V3.",
+      "highlights": [
+        "Three new coding tasks, one fixed config, three repeats, then a rescore",
+        "Part 1 attacks run with no model; Part 2 uses Gemini only",
+        "Public tests are a sample; rewriting tests to assert True still fails after restore"
+      ],
+      "techStack": [
+        "Gemini",
+        "Python"
+      ],
+      "category": "AI Agents",
+      "repoUrl": "https://github.com/varunsood189/S18Code",
+      "extraRepos": [],
+      "demoType": "local",
+      "diagram": {
+        "type": "text",
+        "content": "task -> harness -> raw run -> scorer -> claim"
+      },
+      "example": "cd S18Code\npython3 assignment/attacks.py      # Part 1, no model\npython3 assignment/test_score.py   # v1 vs v2 on synthetic journals, no model\npython3 assignment/run.py          # Part 2: 9 Gemini runs\npython3 assignment/rescore.py      # Part 2: same journals, scorer v2, no model",
+      "screenshot": "assets/screenshots/s18-eval.webp",
+      "complexityScore": 0,
+      "infoScore": 40,
+      "featuredRank": null
+    },
+    {
+      "id": "agent-observatory",
+      "name": "Agent Observatory",
+      "assignment": 17,
+      "tagline": "Live frontend for the Session 17 coding agent: watch graph nodes, a command go red then green, and a guard refuse a destructive git command.",
+      "description": "A live frontend for the Session 17 coding agent. Type a coding task, watch graph nodes appear, watch a command go red then green, and inspect the diff. Asking the agent to delete the test file is refused by the guard.",
+      "highlights": [
+        "Live graph view of an S17Code coding run, including the diff",
+        "Failing path: a request to delete the test file is refused",
+        "Bug fixes filed against S17Code (destructive git) and glc_v5 (SSRF on agent_trace)"
+      ],
+      "techStack": [
+        "Python",
+        "LLM",
+        "RAG"
+      ],
+      "category": "Full-stack",
+      "repoUrl": "https://github.com/varunsood189/agent-observatory",
+      "extraRepos": [],
+      "demoType": "web",
+      "diagram": {
+        "type": "none",
+        "content": ""
+      },
+      "example": "git clone https://github.com/theschoolofai/glc_v5.git\ncd glc_v5\nuv sync\ncp .env.example .env   # put at least one provider key in here\nuv run glc serve",
+      "screenshot": "assets/screenshots/agent-observatory.webp",
+      "complexityScore": 0,
+      "infoScore": 25,
+      "featuredRank": null
     }
   ]
 }
