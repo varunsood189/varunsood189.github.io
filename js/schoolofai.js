@@ -20,6 +20,17 @@
         stockwise: 'linear-gradient(135deg, #22c55e, #3b82f6)',
         promptforge: 'linear-gradient(135deg, #a855f7, #6366f1)',
         'job-finder': 'linear-gradient(135deg, #0ea5e9, #8b5cf6)',
+        'eag-cognitive': 'linear-gradient(135deg, #6366f1, #ec4899)',
+        'growing-graph': 'linear-gradient(135deg, #10b981, #3b82f6)',
+        'browser-agents': 'linear-gradient(135deg, #f59e0b, #ef4444)',
+        's13-runtime': 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+        's14-runtime': 'linear-gradient(135deg, #8b5cf6, #3b82f6)',
+        's15-runtime': 'linear-gradient(135deg, #22c55e, #0ea5e9)',
+        's16-runtime': 'linear-gradient(135deg, #f43f5e, #a855f7)',
+        'agent-observatory': 'linear-gradient(135deg, #0ea5e9, #10b981)',
+        's18-eval': 'linear-gradient(135deg, #eab308, #f97316)',
+        'directory-agent': 'linear-gradient(135deg, #6366f1, #0ea5e9)',
+        'agentswitch-advanced': 'linear-gradient(135deg, #ec4899, #8b5cf6)',
     };
 
     const FILTER_MAP = {
