@@ -1,439 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varun Sood | GenAI & Python Engineer</title>
-    <meta name="description" content="Portfolio of Varun Sood, AVP & Python Engineer specializing in GenAI, LLMs, and Computer Vision.">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/schoolofai.css">
-    
-    <!-- Icons (Lucide) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varun Sood | Senior AI Engineer</title>
+  <meta name="description" content="Senior AI Engineer building data-driven and AI-powered systems — GenAI, RAG, agents, and computer vision. Portfolio of Varun Sood.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Header / Nav -->
-    <nav class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 24px 0; gap: 12px;">
-        <div class="brand" style="font-size: 24px; font-weight: 800; letter-spacing: -1px;">
-            <span class="gradient-text">VS</span>
-        </div>
-        <div class="nav-inner">
-            <a href="#about" style="text-decoration: none; color: inherit;" class="nav-link">About</a>
-            <a href="#projects" style="text-decoration: none; color: inherit;" class="nav-link">Projects</a>
-            <a href="schoolofai.html" style="text-decoration: none; color: inherit;" class="nav-link">School of AI</a>
-            <a href="#insights" style="text-decoration: none; color: inherit;" class="nav-link">Insights</a>
-            <a href="#certifications" style="text-decoration: none; color: inherit;" class="nav-link">Certs</a>
-            <a href="#education" style="text-decoration: none; color: inherit;" class="nav-link">Education</a>
-            <a href="#experience" style="text-decoration: none; color: inherit;" class="nav-link">Experience</a>
-            <a href="https://linkedin.com/in/varunsood189" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" class="nav-link" aria-label="LinkedIn"><i data-lucide="linkedin" style="width: 18px; vertical-align: middle;"></i></a>
-            <a href="#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 13px;">Contact</a>
-        </div>
-    </nav>
-
-    <main class="container">
-        
-        <!-- Hero Section -->
-        <section id="hero" style="text-align: center; padding: 100px 0;">
-            <div class="reveal">
-                <h1 style="font-size: clamp(40px, 8vw, 84px); line-height: 1.1; margin-bottom: 24px; font-weight: 800; letter-spacing: -2px;">
-                    Crafting the Future: <br>
-                    <span id="tagline-container" class="gradient-text">
-                        <span class="tagline active">GenAI Architect</span>
-                        <span class="tagline">Python Lead</span>
-                        <span class="tagline">Tech Mentor</span>
-                        <span class="tagline">AI Researcher</span>
-                    </span>
-                </h1>
-                <p class="text-muted" style="font-size: 20px; max-width: 700px; margin: 0 auto 32px;">
-                    Building intelligent solutions with data, code, and innovation. Specialized in production-scale LLM systems and advanced computer vision.
-                </p>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">90%+</div>
-                        <div class="hero-stat-label">Image QA precision<br>(DINOv2 + LoRA)</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">~80%</div>
-                        <div class="hero-stat-label">Pipeline storage<br>reduction shipped</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">~67%</div>
-                        <div class="hero-stat-label">Training time<br>cut in production</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">0.68%</div>
-                        <div class="hero-stat-label">Trainable params<br>for strong CV fit</div>
-                    </div>
-                </div>
-                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                    <a href="#projects" class="btn btn-primary">View My Work <i data-lucide="arrow-right" style="width: 18px;"></i></a>
-                    <a href="Resume_varun_sood.pdf" class="btn glass-card" style="padding: 12px 28px; background: rgba(255,255,255,0.05);">Download Resume</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bento Grid Portfolio -->
-        <section id="about">
-            <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Overview & Expertise</h2>
-            <div class="bento-grid">
-                
-                <!-- About Card -->
-                <div class="glass-card col-8 reveal">
-                    <h3 style="margin-bottom: 16px; font-size: 24px;"><i data-lucide="user" style="vertical-align: middle; margin-right: 8px;"></i> About Me</h3>
-                    <p class="text-muted">
-                        Python engineer focused on production GenAI and computer-vision systems. Experienced building schema-aware generation backends, AI agents, and scalable model infra (CI/CD, experiment tracking, storage and training optimization). Strong background in system-level modeling, model optimization, and mentoring engineering teams.
-                    </p>
-                    <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-                        <div class="tech-pill" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2); color: var(--accent-primary);">
-                            <i data-lucide="briefcase" style="width: 14px;"></i> AVP @ Citi
-                        </div>
-                        <div class="tech-pill" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: var(--accent-secondary);">
-                            <i data-lucide="graduation-cap" style="width: 14px;"></i> M.Tech @ IIT Delhi
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Expertise Card 1 -->
-                <div class="glass-card col-4 reveal" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);">
-                    <i data-lucide="sparkles" style="color: var(--accent-primary); margin-bottom: 16px;"></i>
-                    <h3 style="font-size: 20px; margin-bottom: 8px;">GenAI Models</h3>
-                    <p class="text-small text-muted">LLMs, Diffusion, LoRA, PEFT optimization for production workloads.</p>
-                </div>
-
-                <!-- Expertise Card 2 -->
-                <div class="glass-card col-4 reveal">
-                    <i data-lucide="code-2" style="color: var(--accent-secondary); margin-bottom: 16px;"></i>
-                    <h3 style="font-size: 20px; margin-bottom: 8px;">Python Systems</h3>
-                    <p class="text-small text-muted">Scalable backends, AI agents, and automated CI/CD pipelines.</p>
-                </div>
-
-                <!-- Technical Stack Card -->
-                <div class="glass-card col-8 reveal">
-                    <h3 style="margin-bottom: 24px; font-size: 20px;">Technical Stack</h3>
-                    <div class="tech-grid">
-                        <div class="tech-pill"><i data-lucide="terminal" style="width: 14px; color: var(--accent-primary);"></i> Python / C++</div>
-                        <div class="tech-pill"><i data-lucide="cpu" style="width: 14px; color: var(--accent-primary);"></i> PyTorch / TF</div>
-                        <div class="tech-pill"><i data-lucide="eye" style="width: 14px; color: var(--accent-primary);"></i> CV (YOLO, DINOv2)</div>
-                        <div class="tech-pill"><i data-lucide="brain-circuit" style="width: 14px; color: var(--accent-primary);"></i> LLMs / RAG</div>
-                        <div class="tech-pill"><i data-lucide="cloud" style="width: 14px; color: var(--accent-primary);"></i> OpenShift / AWS</div>
-                        <div class="tech-pill"><i data-lucide="database" style="width: 14px; color: var(--accent-primary);"></i> SQL / kdb+</div>
-                        <div class="tech-pill"><i data-lucide="activity" style="width: 14px; color: var(--accent-primary);"></i> W&B / Monitor</div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- School of AI Featured (top 3) -->
-        <section id="schoolofai">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px;">
-                <h2 class="reveal" style="font-size: 32px; margin: 0;">School of AI — Featured</h2>
-                <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                    <a href="schoolofai.html" class="btn glass-card reveal text-small" style="padding: 10px 20px; background: rgba(255,255,255,0.05); text-decoration: none; color: inherit;">
-                        Explore all projects →
-                    </a>
-                    <a href="School_of_AI_Portfolio.pdf" class="btn glass-card reveal text-small" style="padding: 10px 20px; background: rgba(255,255,255,0.05); text-decoration: none; color: inherit;" target="_blank" rel="noopener">
-                        Portfolio PDF
-                    </a>
-                    <a href="assets/schoolofai/EAGV3-certificate.pdf" class="btn glass-card reveal text-small" style="padding: 10px 20px; background: rgba(255,255,255,0.05); text-decoration: none; color: inherit;" target="_blank" rel="noopener">
-                        EAG V3 certificate
-                    </a>
-                </div>
-            </div>
-            <div id="schoolofai-featured-grid" class="bento-grid">
-                <p class="text-muted col-12">Loading School of AI projects…</p>
-            </div>
-        </section>
-
-        <!-- Highlighted Projects — aligned with GitHub pins -->
-        <section id="projects">
-            <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Key Projects</h2>
-            <div class="bento-grid">
-
-                <!-- 1. eag-cognitive-agent -->
-                <div class="glass-card col-8 reveal" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);">
-                    <div style="font-size: 12px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">AGENTS · RAG · MCP</div>
-                    <h3 style="margin-bottom: 12px; font-size: 28px;">EAG Cognitive Agent</h3>
-                    <p class="text-muted" style="margin-bottom: 12px;">
-                        Four-role agent loop — Memory, Perception, Decision, Action — with FAISS vector memory, MCP tools, and pytest coverage. Orchestrates tool use through an LLM gateway with embed + chat.
-                    </p>
-                    <p class="text-small text-muted" style="margin-bottom: 20px;"><strong style="color: var(--text-main);">Notice:</strong> Role separation + RAG memory + MCP tools in one runnable agent, with tests that do not require the gateway.</p>
-                    <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-                        <a href="https://github.com/varunsood189/eag-cognitive-agent" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">View Code</a>
-                        <span class="text-small text-muted"><i data-lucide="layers" style="width: 14px; vertical-align: middle;"></i> FAISS · MCP · pytest</span>
-                    </div>
-                </div>
-
-                <!-- 2. A27-directory-agent -->
-                <div class="glass-card col-4 reveal" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent);">
-                    <div style="font-size: 12px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">MCP · HARNESS</div>
-                    <h3 style="margin-bottom: 12px;">Directory Agent</h3>
-                    <p class="text-small text-muted" style="margin-bottom: 8px;">
-                        MCP Directory agent for customer dedupe and “who do we know” lookups across two books, with a scored harness.
-                    </p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Proof:</strong> 54 pytest cases covering seat predicates, specs, and filed MCP bugs.</p>
-                    <a href="https://github.com/varunsood189/A27-directory-agent" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
-                </div>
-
-                <!-- 3. system-design-knowledge-graph -->
-                <div class="glass-card col-6 reveal">
-                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">AGENTIC KG · FASTAPI</div>
-                    <h4 style="margin-bottom: 8px;">System Design Knowledge Graph</h4>
-                    <p class="text-small text-muted" style="margin-bottom: 12px;">Ingest engineering blogs, extract concepts/relationships with LLM agents, and grow a NetworkX graph with live SSE planner logs.</p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Stack:</strong> FastAPI · FastMCP · Gemini JSON planner · NetworkX</p>
-                    <a href="https://github.com/varunsood189/system-design-knowledge-graph" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
-                </div>
-
-                <!-- 4. ResearchPulse -->
-                <div class="glass-card col-6 reveal" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), transparent);">
-                    <div style="font-size: 11px; color: var(--accent-secondary); font-weight: 700; margin-bottom: 8px;">CHROME EXTENSION · GEN-AI</div>
-                    <h4 style="margin-bottom: 8px;">ResearchPulse</h4>
-                    <p class="text-small text-muted" style="margin-bottom: 12px;">Manifest V3 side panel that summarizes research pages (arXiv, PMC, and similar), with follow-up Q&amp;A and citations via Gemini. API keys stay in local browser storage only.</p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Repo:</strong> <code style="font-size: 12px;">summerize-research-paper</code></p>
-                    <a href="https://github.com/varunsood189/summerize-research-paper" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
-                </div>
-
-                <!-- 5. stock-intelligence-platform -->
-                <div class="glass-card col-6 reveal">
-                    <div style="font-size: 11px; color: var(--accent-primary); font-weight: 700; margin-bottom: 8px;">TOOL-USING AGENT · CHROME</div>
-                    <h4 style="margin-bottom: 8px;">Stock Intelligence Platform</h4>
-                    <p class="text-small text-muted" style="margin-bottom: 12px;">Chrome Side Panel agent that fetches news and prices, links dates to price moves, and returns a short buy/not-buy view with a copyable tool trace.</p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">Note:</strong> Educational research tool — not investment advice.</p>
-                    <a href="https://github.com/varunsood189/stock-intelligence-platform" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
-                </div>
-
-                <!-- 6. agent-observatory -->
-                <div class="glass-card col-6 reveal" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), transparent);">
-                    <div style="font-size: 11px; color: #10b981; font-weight: 700; margin-bottom: 8px;">OBSERVABILITY · SECURITY</div>
-                    <h4 style="margin-bottom: 8px;">Agent Observatory</h4>
-                    <p class="text-small text-muted" style="margin-bottom: 12px;">Live UI for coding-agent runs: graph nodes, command red→green, diffs, and a refused destructive path. Includes bug fixes for SSRF on agent_trace and irreversible git subcommands.</p>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;"><strong style="color: var(--text-main);">PRs:</strong> S17Code destructive-git guard · glc_v5 SSRF fix</p>
-                    <a href="https://github.com/varunsood189/agent-observatory" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">View on GitHub</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Deep-Dives (Insights) -->
-        <section id="insights">
-            <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Technical Deep-Dives</h2>
-            <div class="bento-grid">
-                
-                <div class="glass-card col-6 reveal insight-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);">
-                    <div class="insight-tag">Research & Eval</div>
-                    <h3 style="margin-bottom: 12px;"><i data-lucide="microscope" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> LLM Evaluation</h3>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;">
-                        Implementing RAG evaluation frameworks using <b>LLM-as-a-judge</b> and cosine similarity metrics. Specialized in identifying hallucinations and optimizing retrieval precision.
-                    </p>
-                    <div style="display: flex; gap: 8px;">
-                        <span class="text-small" style="color: #10b981;">#RAG</span>
-                        <span class="text-small" style="color: #10b981;">#LLMops</span>
-                    </div>
-                </div>
-
-                <div class="glass-card col-6 reveal insight-card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), transparent);">
-                    <div class="insight-tag">Search & Retrieval</div>
-                    <h3 style="margin-bottom: 12px;"><i data-lucide="search" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> Semantic Search</h3>
-                    <p class="text-small text-muted" style="margin-bottom: 16px;">
-                        Building scalable search architectures with <b>Elasticsearch</b> and <b>SentenceTransformers</b>. Expertise in vector embeddings and hybrid search strategies.
-                    </p>
-                    <div style="display: flex; gap: 8px;">
-                        <span class="text-small" style="color: #f59e0b;">#Elasticsearch</span>
-                        <span class="text-small" style="color: #f59e0b;">#VectorSearch</span>
-                    </div>
-                </div>
-
-                <div class="glass-card col-12 reveal" style="text-align: center; background: rgba(255,255,255,0.02);">
-                    <p class="text-muted text-small">
-                        Exploring <b>Ollama</b> for local inference, <b>Grafana</b> for monitoring, and <b>Saturn Cloud</b> for scalable training.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section id="certifications">
-            <h2 class="reveal" style="margin-bottom: 20px; font-size: 32px;">Certifications</h2>
-            <div class="cert-grid reveal">
-                <div class="cert-card">
-                    <span class="text-small gradient-text">LinkedIn Learning</span>
-                    <h4 style="font-size: 16px;">AI Foundations: Neural Networks</h4>
-                    <p class="text-small text-muted">Focus on backpropagation and deep architecture design.</p>
-                </div>
-                <div class="cert-card">
-                    <span class="text-small gradient-text">LinkedIn Learning</span>
-                    <h4 style="font-size: 16px;">AI Foundations: Machine Learning</h4>
-                    <p class="text-small text-muted">Statistical modeling and supervised/unsupervised learning.</p>
-                </div>
-                <div class="cert-card">
-                    <span class="text-small gradient-text">Coursera</span>
-                    <h4 style="font-size: 16px;">The Data Scientist’s Toolbox</h4>
-                    <p class="text-small text-muted">Environment setup, version control, and data science workflow.</p>
-                </div>
-                <div class="cert-card">
-                    <span class="text-small gradient-text">edX</span>
-                    <h4 style="font-size: 16px;">Embedded Systems</h4>
-                    <p class="text-small text-muted">UT Austin: "Shape the World" – Real-time OS and microcontroller design.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education">
-            <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Education</h2>
-            <div class="bento-grid">
-                <div class="glass-card col-6 reveal">
-                    <h3 style="font-size: 20px; margin-bottom: 8px;"><i data-lucide="graduation-cap" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> M.Tech, Computer Technology</h3>
-                    <p class="text-small gradient-text" style="margin-bottom: 8px;">Indian Institute of Technology Delhi</p>
-                    <p class="experience-meta">2017 – 2019 · New Delhi, India</p>
-                    <p class="text-small text-muted" style="margin-top: 12px;">CGPA: 8.48</p>
-                </div>
-                <div class="glass-card col-6 reveal">
-                    <h3 style="font-size: 20px; margin-bottom: 8px;"><i data-lucide="award" style="width: 20px; vertical-align: middle; margin-right: 8px;"></i> B.E., Electronics &amp; Communication</h3>
-                    <p class="text-small gradient-text" style="margin-bottom: 8px;">UIET, Panjab University</p>
-                    <p class="experience-meta">2012 – 2016 · Chandigarh, India</p>
-                    <p class="text-small text-muted" style="margin-top: 12px;">CGPA: 8.37 (Hons.)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Timeline -->
-        <section id="experience">
-            <h2 class="reveal" style="margin-bottom: 40px; font-size: 32px;">Experience</h2>
-            <div class="reveal" style="display: flex; flex-direction: column; gap: 32px;">
-                
-                <div class="glass-card">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
-                        <div>
-                            <h3 style="font-size: 20px;">AVP, Python Engineer FX (Gen AI)</h3>
-                            <p class="text-small gradient-text">Citi</p>
-                            <p class="experience-meta">Aug 2025 – Present · Pune, India</p>
-                        </div>
-                    </div>
-                    <ul class="text-small text-muted" style="padding-left: 20px;">
-                        <li>Deployed isolated OpenShift pods with independent pipelines for secure parallel CI/CD.</li>
-                        <li>Built the Schema Manager: a schema-aware generation backbone for safe kdb+ query generation.</li>
-                        <li>Implemented autonomous AI agents for natural language interpretation and execution.</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
-                        <div>
-                            <h3 style="font-size: 20px;">Senior Data Scientist</h3>
-                            <p class="text-small gradient-text">Dataeaze Systems</p>
-                            <p class="experience-meta">Apr 2022 – Aug 2025 · Pune, India</p>
-                        </div>
-                    </div>
-                    <ul class="text-small text-muted" style="padding-left: 20px;">
-                        <li>Delivered and deployed CV solutions for collision prediction, dashcam PCI grading, and accident risk prediction.</li>
-                        <li>Built ResumeRAG and GenAI solutions including car wheelbase estimation via advanced prompting.</li>
-                        <li>Deployed image-quality classification with DINOv2 + LoRA (90%+ precision using 0.68% trainable params).</li>
-                        <li>Reduced pipeline storage by ~80% and training time by ~67%; integrated experiment tracking and mentored junior engineers.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" style="text-align: center; padding: 120px 0;">
-            <div class="glass-card reveal" style="max-width: 600px; margin: 0 auto; padding: 48px;">
-                <h2 style="margin-bottom: 16px; font-size: 32px;">Let's Connect</h2>
-                <p class="text-muted" style="margin-bottom: 32px;">
-                    Whether it's a new opportunity, a collaboration, or just a technical chat about GenAI—my inbox is always open.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
-                    <a href="mailto:varunsood189@gmail.com" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px;">
-                        <i data-lucide="mail"></i> Email Me Directly
-                    </a>
-                    <a href="https://linkedin.com/in/varunsood189" target="_blank" class="btn glass-card" style="width: 100%; justify-content: center; padding: 16px; background: rgba(255,255,255,0.05);">
-                        <i data-lucide="linkedin"></i> Connect on LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="container" style="padding: 60px 0; border-top: 1px solid var(--glass-border); text-align: center;">
-        <p class="text-muted text-small">Built with ❤️ by Varun Sood | Hosted on GitHub Pages</p>
-        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 24px;">
-            <a href="https://github.com/varunsood189" style="color: var(--text-muted);"><i data-lucide="github"></i></a>
-            <a href="https://linkedin.com/in/varunsood189" style="color: var(--text-muted);"><i data-lucide="linkedin"></i></a>
-            <a href="mailto:varunsood189@gmail.com" style="color: var(--text-muted);"><i data-lucide="mail"></i></a>
-        </div>
-    </footer>
-
-    <!-- Sticky Socials -->
-    <div class="glass-card" style="position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); padding: 12px 24px; display: flex; gap: 24px; z-index: 100; border-radius: 99px;">
-        <a href="https://github.com/varunsood189" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i data-lucide="github" style="width: 20px;"></i></a>
-        <a href="https://linkedin.com/in/varunsood189" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i data-lucide="linkedin" style="width: 20px;"></i></a>
-        <a href="mailto:varunsood189@gmail.com" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i data-lucide="mail" style="width: 20px;"></i></a>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="wordmark" href="index.html">Varun Sood</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="schoolofai.html">School of AI</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-ghost" href="Resume_varun_sood.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
     </div>
+  </header>
 
-    <div id="back-to-top" title="Back to Top">
-        <i data-lucide="chevron-up"></i>
+  <main>
+    <section class="hero container">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Varun Sood</h1>
+      <p class="role">Senior AI Engineer · AVP, Python Engineer FX (Gen AI) at Citi</p>
+      <p class="lede">
+        I build data-driven and AI-powered systems — from machine learning workflows
+        to production GenAI applications. Recent work covers schema-aware agents,
+        retrieval systems, multi-agent orchestration, and computer vision in production.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">View selected work</a>
+        <a class="btn btn-ghost" href="Resume_varun_sood.pdf" target="_blank" rel="noopener">Download resume</a>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <h2>Selected work</h2>
+        <p class="section-intro">
+          Four projects chosen for technical depth. Full School of AI catalog lives on a separate page.
+        </p>
+        <div class="work-list">
+          <article class="work-item">
+            <h3>System Design Knowledge Graph</h3>
+            <p class="work-meta">School of AI · Assignment 5 · FastAPI · MCP · Gemini</p>
+            <p>
+              Ingest engineering blogs, extract concepts and relationships with structured LLM agents,
+              persist an evolving NetworkX graph, and stream agent steps to a learning UI.
+            </p>
+            <div class="work-actions">
+              <a class="btn btn-primary" href="projects/knowledge-graph.html">Case study</a>
+              <a class="btn btn-ghost" href="https://github.com/varunsood189/system-design-knowledge-graph" target="_blank" rel="noopener">Repository</a>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <h3>Multi-Agent Growing-Graph Orchestrator</h3>
+            <p class="work-meta">School of AI · Assignment 8 · Graph orchestration · LLM Gateway</p>
+            <p>
+              A directed graph of LLM-backed skills is the agent loop. Nodes hand typed results along
+              edges; the graph grows at runtime as the orchestrator splices in successors.
+            </p>
+            <div class="work-actions">
+              <a class="btn btn-primary" href="projects/growing-graph.html">Case study</a>
+              <a class="btn btn-ghost" href="https://github.com/varunsood189/Assignment-8" target="_blank" rel="noopener">Repository</a>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <h3>EAG Cognitive Agent</h3>
+            <p class="work-meta">School of AI · Assignment 7 · MCP · FAISS · RAG</p>
+            <p>
+              Four-role agent loop — Memory, Perception, Decision, Action — with vector memory,
+              MCP tools, and an LLM gateway as the only model backend.
+            </p>
+            <div class="work-actions">
+              <a class="btn btn-primary" href="projects/eag-cognitive.html">Case study</a>
+              <a class="btn btn-ghost" href="https://github.com/varunsood189/eag-cognitive-agent" target="_blank" rel="noopener">Repository</a>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <h3>Directory Agent — AgentSwitch</h3>
+            <p class="work-meta">School of AI · Seat 27 · MCP · Contacts spine</p>
+            <p>
+              MCP agent over a Party / PartyRelationship contacts model for customer deduplication
+              and “who do we know” queries, with gap analysis and filed platform bugs.
+            </p>
+            <div class="work-actions">
+              <a class="btn btn-primary" href="projects/directory-agent.html">Case study</a>
+              <a class="btn btn-ghost" href="https://github.com/varunsood189/A27-directory-agent" target="_blank" rel="noopener">Repository</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <h2>Experience</h2>
+        <p class="section-intro">Roles and contributions verified against the current resume.</p>
+        <div class="experience-list">
+          <article class="experience-item">
+            <h3>AVP, Python Engineer FX (Gen AI)</h3>
+            <p class="org">Citi</p>
+            <p class="dates">August 2025 – Present · Pune, India</p>
+            <ul>
+              <li>Deployed isolated OpenShift pods with independent Lightspeed and Harness pipelines for parallel, secure CI/CD.</li>
+              <li>Built Schema Manager, the backbone for schema-aware English-to-Q generation for safe, executable kdb+ queries.</li>
+              <li>Integrated AI agents that interpret natural language, use schema context, and generate, validate, and execute Q code.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <h3>Senior Data Scientist</h3>
+            <p class="org">dataeaze systems</p>
+            <p class="dates">April 2022 – August 2025 · Pune, India</p>
+            <ul>
+              <li>Shipped vision systems including collision prediction, dashcam PCI grading, crack/road-width estimation, and accident-risk models.</li>
+              <li>Built ResumeRAG for document extraction and feedback; applied advanced prompting for car wheelbase estimation.</li>
+              <li>Deployed DINOv2 image-quality classification with LoRA (90%+ precision using 0.68% trainable parameters).</li>
+              <li>Cut pipeline storage by ~80% and training time by ~67%; integrated W&amp;B and mentoring practices.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <h3>Senior Software Specialist</h3>
+            <p class="org">Infineon Technology</p>
+            <p class="dates">July 2019 – March 2022 · Bangalore, India</p>
+            <ul>
+              <li>SystemC modeling of embedded Aurix TriCore components for shift-left simulation.</li>
+              <li>Designed PKC and STM modules and Python data-injection tests for multi-core validation.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="container">
+        <h2>Technical focus</h2>
+        <p class="section-intro">Areas supported by shipped work, not a badge cloud.</p>
+        <div class="focus-grid">
+          <div class="focus-block">
+            <h3>Applied machine learning &amp; computer vision</h3>
+            <p>Production vision pipelines, model optimization with LoRA/DINOv2, experiment tracking, and storage/training efficiency.</p>
+          </div>
+          <div class="focus-block">
+            <h3>AI agents &amp; retrieval systems</h3>
+            <p>Schema-aware agents, MCP tool loops, RAG applications, multi-agent graph orchestration, and evaluation harnesses.</p>
+          </div>
+          <div class="focus-block">
+            <h3>Data platforms &amp; delivery</h3>
+            <p>OpenShift CI/CD, gateway services, durable event journals, and telemetry for agent runtimes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="schoolofai">
+      <div class="container">
+        <h2>School of AI</h2>
+        <p class="section-intro">
+          EAG V3 coursework spanning Chrome agents, MCP tools, live-graph runtimes, evaluation, and AgentSwitch seats.
+        </p>
+        <div class="soai-panel">
+          <p>
+            Completed EAG V3 (certificate <strong>EAGV3-C-00038</strong>). The catalog lists all verified assignment projects
+            with repository links where public remotes exist.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="schoolofai.html">Open full catalog</a>
+            <a class="btn btn-ghost" href="assets/schoolofai/EAGV3-certificate.pdf" target="_blank" rel="noopener">View EAG V3 certificate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container split-grid">
+        <div>
+          <h2>About</h2>
+          <p class="section-intro">
+            Python engineer focused on production GenAI and computer-vision systems. Based in Pune.
+            M.Tech in Computer Technology from IIT Delhi; BE (Hons.) in Electronics &amp; Communication from UIET, Panjab University.
+          </p>
+          <p>
+            <strong>Education</strong><br>
+            M.Tech, Computer Technology — IIT Delhi (2017–2019), CGPA 8.48<br>
+            B.E., Electronics &amp; Communication — UIET, Panjab University (2012–2016), CGPA 8.37 with Honours
+          </p>
+        </div>
+        <div id="certifications">
+          <h2>Certifications</h2>
+          <div class="cert-list">
+            <div class="cert-item">
+              <h3>EAG V3 Completion — School of AI</h3>
+              <p>Certificate ID EAGV3-C-00038. <a href="assets/schoolofai/EAGV3-certificate.pdf" target="_blank" rel="noopener">View PDF</a></p>
+            </div>
+            <div class="cert-item">
+              <h3>Deep Learning — DeepLearning.AI (Coursera)</h3>
+              <p>Listed on the current resume.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-intro">Reach out for roles, collaborations, or technical discussion.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:varunsood189@gmail.com">Email</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/varunsood189" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/varunsood189" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <span>© <span id="year"></span> Varun Sood</span>
+      <div class="contact-links">
+        <a href="schoolofai.html">School of AI</a>
+        <a href="Resume_varun_sood.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
     </div>
+  </footer>
 
-    <!-- School of AI featured projects -->
-    <script>document.body.dataset.page = 'embed'; document.body.dataset.projectsUrl = 'data/projects.json';</script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: false, theme: 'dark' });</script>
-    <script src="js/schoolofai.js"></script>
-
-    <!-- Scripts -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Reveal Animation on Scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Tagline Rotation Logic
-        const taglines = document.querySelectorAll('.tagline');
-        let currentTagline = 0;
-
-        function rotateTagline() {
-            taglines[currentTagline].classList.remove('active');
-            currentTagline = (currentTagline + 1) % taglines.length;
-            taglines[currentTagline].classList.add('active');
-        }
-
-        setInterval(rotateTagline, 3000);
-
-        // Back to Top Visibility
-        const btt = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                btt.classList.add('visible');
-            } else {
-                btt.classList.remove('visible');
-            }
-        });
-        btt.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Mouse move effect for background glow
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth) * 100;
-            const y = (e.clientY / window.innerHeight) * 100;
-            document.body.style.setProperty('--mouse-x', `${x}%`);
-            document.body.style.setProperty('--mouse-y', `${y}%`);
-        });
-    </script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
 </body>
 </html>

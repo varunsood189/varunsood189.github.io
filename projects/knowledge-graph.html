@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Design Knowledge Graph | Varun Sood</title>
+  <meta name="description" content="FastAPI knowledge graph for system-design learning with MCP tools and Gemini agents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="wordmark" href="../index.html">Varun Sood</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../schoolofai.html">School of AI</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="btn btn-ghost" href="../Resume_varun_sood.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="case-hero">
+      <p class="eyebrow">Case study · School of AI Assignment 5</p>
+      <h1>System Design Knowledge Graph</h1>
+      <p class="lede" style="color:var(--muted);max-width:40rem;">
+        An evolving knowledge graph for system-design learning: ingest engineering blogs,
+        extract concepts and relationships with structured LLM agents, and recommend what to study next.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/varunsood189/system-design-knowledge-graph" target="_blank" rel="noopener">Repository</a>
+        <a class="btn btn-ghost" href="../schoolofai.html">All School of AI projects</a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h2>Problem</h2>
+      <p>System-design material is scattered across blogs. Learners need a durable graph of concepts and relationships, not one-off summaries, plus recommendations grounded in what is already in the graph.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Role and contribution</h2>
+      <p>Designed and implemented the FastAPI service, MCP tool surface, Gemini JSON planner loop, SSE live agent log, NetworkX persistence, and frontend ingest UI described in the project README.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Architecture</h2>
+      <pre class="diagram">Client UI
+  → POST /ingest/stream (SSE)
+  → FastAPI orchestrator / agent loop
+  → Gemini JSON planner selects MCP tools
+  → MCP tools: extract article → concepts → relationships → merge → recommendations
+  → GraphManager persists NetworkX graph to data/graph.json</pre>
+    </section>
+
+    <section class="case-section">
+      <h2>Technical decisions</h2>
+      <ul>
+        <li>Pydantic-validated structured outputs for concepts, relationships, and recommendations.</li>
+        <li>SSE so the UI can show tool steps live instead of a single blocking response.</li>
+        <li>Persistent graph merge rather than ephemeral chat memory.</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>Outcome / evidence</h2>
+      <p>Public repository with documented setup, architecture diagram, and runnable stack. Featured as the highest complexity/info entry in the School of AI catalog.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <a href="../index.html#work">← Selected work</a>
+      <a href="../schoolofai.html">School of AI catalog</a>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+</body>
+</html>
