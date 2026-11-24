@@ -1,39 +1,23 @@
 # varunsood189.github.io
 
-This repository hosts my personal resume and portfolio website, built with simple **HTML + CSS** and deployed via **GitHub Pages**.
+Personal portfolio and School of AI (EAG V3) project catalog, deployed with GitHub Pages.
 
-🌐 Live site: [https://varunsood189.github.io](https://varunsood189.github.io)
+## Pages
 
-## 📂 Files
-- `index.html` — Main website content
-- `styles.css` — Stylesheet for the site
-- `Resume_varun_sood.pdf` — My latest resume (available for download from the site)
+- `index.html` — editorial homepage (selected work, experience, School of AI intro, certifications including EAG V3)
+- `schoolofai.html` — full assignment catalog driven by `data/projects.json`
+- `projects/*.html` — case studies for the four homepage selections
+- `assets/schoolofai/EAGV3-certificate.pdf` — EAG V3 completion certificate
 
-## 🚀 Setup & Deployment
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/varunsood189/varunsood189.github.io
-   cd varunsood189.github.io
-   ```
+## Local preview
 
-2. Add/Update files (`index.html`, `styles.css`, `Resume_varun_sood.pdf`).
+```bash
+python3 -m http.server 8080 --bind 127.0.0.1
+```
 
-3. Commit and push changes:
-   ```bash
-   git add .
-   git commit -m "Update site"
-   git push origin main
-   ```
+Open http://127.0.0.1:8080/
 
-4. GitHub Pages will automatically serve the site at:
-   ```
-   https://varunsood189.github.io
-   ```
+## Design notes
 
-## ✨ Features
-- Responsive, mobile-friendly design
-- Resume download link
-- Sections for About, Projects, Insights, Certifications, Education, Experience, and Contact
-
----
-Built with ❤️ and hosted on **GitHub Pages**.
+Static HTML/CSS/JS only. Shared tokens live in `styles.css`. Catalog behavior is in `js/schoolofai.js`.
+See `docs/phase0-audit.md` and `docs/phase1-design.md` for the redesign audit and token decisions.

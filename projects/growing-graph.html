@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growing-Graph Orchestrator | Varun Sood</title>
+  <meta name="description" content="Multi-agent directed graph orchestrator for EAG V3 Session 8.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="wordmark" href="../index.html">Varun Sood</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../schoolofai.html">School of AI</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="btn btn-ghost" href="../Resume_varun_sood.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="case-hero">
+      <p class="eyebrow">Case study · School of AI Assignment 8</p>
+      <h1>Multi-Agent Growing-Graph Orchestrator</h1>
+      <p class="lede" style="color:var(--muted);max-width:40rem;">
+        Session 8 treats a directed graph of skills as the agent loop. Specialized LLM roles execute as nodes;
+        the graph grows as successors are spliced in at runtime.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/varunsood189/Assignment-8" target="_blank" rel="noopener">Repository</a>
+        <a class="btn btn-ghost" href="../schoolofai.html">All School of AI projects</a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h2>Problem</h2>
+      <p>Linear chat loops struggle with multi-skill work that needs typed handoffs, memory, and the ability to expand the plan while a run is in progress.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Role and contribution</h2>
+      <p>Course assignment implementation around the Session 8 scaffold: agent orchestrator under <code>S8SharedCode/code/</code> and LLM Gateway V8 under <code>S8SharedCode/gateway/</code>, with documented run logs.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Architecture</h2>
+      <pre class="diagram">Skills graph (Planner, Researcher, Coder, Formatter, …)
+  → typed edges between nodes
+  → orchestrator grows graph as skills finish
+  → LLM Gateway V8 (FastAPI) for chat, routing, embeddings</pre>
+    </section>
+
+    <section class="case-section">
+      <h2>Technical decisions</h2>
+      <ul>
+        <li>Graph-shaped control flow instead of a fixed pipeline.</li>
+        <li>Separate gateway service for model access.</li>
+        <li>Runtime expansion of successors rather than a fully static DAG.</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>Outcome / evidence</h2>
+      <p>Public Assignment-8 repository with architecture write-up and recorded run documentation.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <a href="../index.html#work">← Selected work</a>
+      <a href="../schoolofai.html">School of AI catalog</a>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+</body>
+</html>

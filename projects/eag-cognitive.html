@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EAG Cognitive Agent | Varun Sood</title>
+  <meta name="description" content="Four-role MCP agent with FAISS memory for EAG V3 Session 7.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="wordmark" href="../index.html">Varun Sood</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../schoolofai.html">School of AI</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="btn btn-ghost" href="../Resume_varun_sood.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="case-hero">
+      <p class="eyebrow">Case study · School of AI Assignment 7</p>
+      <h1>EAG Cognitive Agent</h1>
+      <p class="lede" style="color:var(--muted);max-width:40rem;">
+        Four-role agentic architecture — Memory, Perception, Decision, Action — with FAISS vector memory,
+        MCP tools, and LLM Gateway V7 as the only model backend.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/varunsood189/eag-cognitive-agent" target="_blank" rel="noopener">Repository</a>
+        <a class="btn btn-ghost" href="../schoolofai.html">All School of AI projects</a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h2>Problem</h2>
+      <p>Tool-using agents need disciplined roles, bounded loops, and retrieval memory without leaking provider credentials into every module.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Role and contribution</h2>
+      <p>Implemented the Session 7 orchestrator (<code>agent7.py</code>), role modules, MCP server tools, FAISS index integration, gateway client, and secret-scanning scripts described in the README.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Architecture</h2>
+      <pre class="diagram">User query
+  → memory.remember
+  → loop: memory.read → perception → decision (one goal) → action (MCP)
+  → FAISS vector index + artifact store
+  → LLM Gateway V7 (/v1/embed + chat)</pre>
+    </section>
+
+    <section class="case-section">
+      <h2>Technical decisions</h2>
+      <ul>
+        <li>Decision sees one goal at a time to keep tool calls focused.</li>
+        <li>Large payloads go to content-addressable artifacts.</li>
+        <li>Gateway owns model credentials; agent code talks to the gateway only.</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>Outcome / evidence</h2>
+      <p>Public repository with architecture docs, tests that do not require the gateway, and run scripts.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <a href="../index.html#work">← Selected work</a>
+      <a href="../schoolofai.html">School of AI catalog</a>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+</body>
+</html>

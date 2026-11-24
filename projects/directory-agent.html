@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directory Agent | Varun Sood</title>
+  <meta name="description" content="AgentSwitch seat 27 directory MCP agent for contacts deduplication.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="wordmark" href="../index.html">Varun Sood</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../schoolofai.html">School of AI</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="btn btn-ghost" href="../Resume_varun_sood.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="case-hero">
+      <p class="eyebrow">Case study · AgentSwitch Seat 27</p>
+      <h1>Directory Agent</h1>
+      <p class="lede" style="color:var(--muted);max-width:40rem;">
+        Contacts spine over Party / PartyRelationship. One MCP agent for customer deduplication
+        and relationship lookup goals.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/varunsood189/A27-directory-agent" target="_blank" rel="noopener">Repository</a>
+        <a class="btn btn-ghost" href="../schoolofai.html">All School of AI projects</a>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h2>Problem</h2>
+      <p>CRM-style contact books accumulate duplicates and weak relationship context. Operators need agent-assisted dedupe and “who do we know at this company” answers with human approval for writes.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Role and contribution</h2>
+      <p>Built the seat-27 directory agent against the AgentSwitch harness: goals for deduplicate_customers and who_do_we_know, plus gap report vs Attio and a set of filed platform bugs documented in the repo.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Architecture</h2>
+      <pre class="diagram">Operator prompt
+  → Directory MCP agent
+  → Party / PartyRelationship spine
+  → Goals: directory.deduplicate_customers, directory.who_do_we_know
+  → Human approval for record-changing actions</pre>
+    </section>
+
+    <section class="case-section">
+      <h2>Technical decisions</h2>
+      <ul>
+        <li>MCP as the integration surface for both “books”.</li>
+        <li>Evidence-first docs: gap report, bugs list, completeness audit.</li>
+        <li>Harness-oriented layout for reproducible seat evaluation.</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <h2>Outcome / evidence</h2>
+      <p>Public A27-directory-agent repository with harness config, docs, and filed bug notes. Continues into AgentSwitch Advanced seats work.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <a href="../index.html#work">← Selected work</a>
+      <a href="../schoolofai.html">School of AI catalog</a>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+</body>
+</html>
